@@ -2,11 +2,7 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 
 import ServicesSection from "@/components/ServicesSection";
-import BigBrandsSection from "@/components/BigBrandsSection";
-import PortfolioSection from "@/components/PortfolioSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import MentionedInSection from "@/components/MentionedInSection";
-import NewsSection from "@/components/NewsSection";
+import IndustriesSection from "@/components/IndustriesSection";
 import EngagementModelsSection from "@/components/EngagementModelsSection";
 import GetStartedSection from "@/components/GetStartedSection";
 import Footer from "@/components/Footer";
@@ -19,11 +15,7 @@ export default function Home() {
         <HeroSection />
 
         <ServicesSection />
-        <BigBrandsSection />
-        <PortfolioSection />
-        <TestimonialsSection />
-        <MentionedInSection />
-        <NewsSection />
+        <IndustriesSection />
         <EngagementModelsSection />
         <GetStartedSection />
       </main>

@@ -31,7 +31,7 @@ export default function ServicesSection() {
           >
             Supercharge your business
             <br />
-with AI
+            <span className="text-[#1B54F8]">with AI</span>
           </h2>
           <p className="max-w-[520px] text-[17px] leading-[1.7] text-[#777]">
             Automate tedious processes with AI. Grow faster and more
