@@ -1,58 +1,50 @@
-const steps = [
-  {
-    number: 1,
-    title: "Contact Us",
-    description:
-      "Fill out the contact form protected by NDA, book a calendar and schedule a Zoom Meeting with our experts.",
-  },
-  {
-    number: 2,
-    title: "Get a Consultation",
-    description:
-      "Get on a call with our team to know the feasibility of your project idea.",
-  },
-  {
-    number: 3,
-    title: "Get a Cost Estimate",
-    description:
-      "Based on the project requirements, we share a project proposal with budget and timeline estimates.",
-  },
-  {
-    number: 4,
-    title: "Project Kickoff",
-    description:
-      "Once the project is signed, we bring together a team from a range of disciplines to kick start your project.",
-  },
-];
+"use client";
+
+import { useState } from "react";
+import { ConsultationModal } from "./ConsultationModal";
 
 export default function GetStartedSection() {
+  const [showForm, setShowForm] = useState(false);
+
   return (
-    <section className="w-full bg-white py-[80px]">
-      <div className="mx-auto max-w-[1280px] px-[40px]">
+    <section className="relative w-full bg-[#f6f5f3] px-[40px] py-[120px]">
+      <div className="mx-auto max-w-[1280px] text-center">
         <h2
-          className="mb-[50px] text-center text-[36px] font-medium text-[#100F0F]"
+          className="mb-[24px] text-[42px] font-normal tracking-tight text-[#0a0a0a] md:text-[56px]"
           style={{
             fontFamily: 'Georgia, Times, "Times New Roman", serif',
           }}
         >
-          Get Started Today
+          Get Started <span className="text-[#1B54F8]">Today</span>
         </h2>
 
-        <div className="grid grid-cols-1 gap-[30px] sm:grid-cols-2 lg:grid-cols-4">
-          {steps.map((step) => (
-            <div key={step.number} className="text-center">
-              <div className="mx-auto mb-[16px] flex h-[48px] w-[48px] items-center justify-center rounded-full bg-[#1B54F8] text-[20px] font-bold text-white">
-                {step.number}
-              </div>
-              <h3 className="mb-[8px] text-[18px] font-bold text-[#100F0F]">
-                {step.title}
-              </h3>
-              <p className="text-[14px] leading-[1.6] text-[#333]">
-                {step.description}
-              </p>
-            </div>
-          ))}
-        </div>
+        <p className="mx-auto mb-[40px] max-w-[440px] text-[17px] leading-[1.7] text-[#777]">
+          Schedule a free consultation and discover how AI can transform your
+          business.
+        </p>
+
+        <button
+          type="button"
+          onClick={() => setShowForm(true)}
+          className="group inline-flex cursor-pointer items-center gap-3 rounded-full bg-[#1B54F8] px-10 py-5 text-[16px] font-semibold tracking-wide text-white transition-all duration-300 hover:bg-[#2460ff] hover:shadow-[0_0_50px_-10px_rgba(27,84,248,0.4)]"
+        >
+          FREE CONSULTATION
+          <svg
+            className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"
+            />
+          </svg>
+        </button>
+
+        <ConsultationModal open={showForm} onClose={() => setShowForm(false)} />
       </div>
     </section>
   );

@@ -9,7 +9,7 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "AI Development Company | LeewayHertz",
+  title: "AI Development Company | Riveo AI",
   description:
     "AI development company enabling innovation and rapid development. We build cutting-edge AI solutions for startups and enterprises.",
 };

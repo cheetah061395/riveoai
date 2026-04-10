@@ -13,14 +13,14 @@ const portfolioItems = [
     tag: "#AIStrategy&Consulting",
     title: "Machinery Troubleshooting Using AI",
     description:
-      "LeewayHertz collaborated with a top-tier Fortune 500 manufacturing company to develop an innovative LLM-powered machinery troubleshooting application. This innovative solution streamlines machinery maintenance, elevates safety protocol adherence and mitigates operational risks of the firm.",
+      "Riveo AI collaborated with a top-tier Fortune 500 manufacturing company to develop an innovative LLM-powered machinery troubleshooting application. This innovative solution streamlines machinery maintenance, elevates safety protocol adherence and mitigates operational risks of the firm.",
   },
   {
     image: "/images/portfolio/scrut.png",
     tag: "#GenAIdevelopment",
     title: "LLM-powered App for Compliance and Security Access",
     description:
-      "LeewayHertz has partnered with Scrut to engineer an LLM-powered app designed to streamline access to compliance benchmarks, frameworks, and audit-relevant data for Scrut's clientele.",
+      "Riveo AI has partnered with Scrut to engineer an LLM-powered app designed to streamline access to compliance benchmarks, frameworks, and audit-relevant data for Scrut's clientele.",
   },
 ];
 

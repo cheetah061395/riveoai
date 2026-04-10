@@ -7,7 +7,7 @@ const testimonials = [
     logoHeight: 84,
     logoAlt: "ETON logo",
     quote:
-      "LeewayHertz crafted an exceptional mobile application tailored to our needs, and we are eager for further collaboration",
+      "Riveo AI crafted an exceptional mobile application tailored to our needs, and we are eager for further collaboration",
     name: "Konstantin Schuller",
     title: "Chief Technology Officer at ETON",
   },
@@ -17,7 +17,7 @@ const testimonials = [
     logoHeight: 84,
     logoAlt: "iCruise logo",
     quote:
-      "LeewayHertz efficiently steered our iCruise app's multi-platform expansion",
+      "Riveo AI efficiently steered our iCruise app's multi-platform expansion",
     name: "Uf Tukel",
     title: "Co-Founder iCruise",
   },
@@ -27,7 +27,7 @@ const testimonials = [
     logoHeight: 84,
     logoAlt: "O'Reilly Auto Parts logo",
     quote:
-      "LeewayHertz delivered what they proposed, thanks to their expertise in application development",
+      "Riveo AI delivered what they proposed, thanks to their expertise in application development",
     name: "James Unwin",
     title: "Director of O'Reilly Auto Parts",
   },
@@ -37,7 +37,7 @@ const testimonials = [
     logoHeight: 84,
     logoAlt: "Siemens logo",
     quote:
-      "LeewayHertz's responsive and flexible approach significantly enhanced our app with valuable features",
+      "Riveo AI's responsive and flexible approach significantly enhanced our app with valuable features",
     name: "Roland Busch",
     title: "CEO of Siemens",
   },

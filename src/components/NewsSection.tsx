@@ -6,28 +6,28 @@ const newsItems = [
     imageWidth: 248,
     imageHeight: 170,
     title:
-      "The Hackett Group Announces Strategic Acquisition of Leading Gen AI Development Firm LeewayHertz",
+      "The Hackett Group Announces Strategic Acquisition of Leading Gen AI Development Firm Riveo AI",
   },
   {
     image: "/images/news/forbes.svg",
     imageWidth: 365,
     imageHeight: 250,
     title:
-      "LeewayHertz Named Among Top AI Consulting Firms by Forbes",
+      "Riveo AI Named Among Top AI Consulting Firms by Forbes",
   },
   {
     image: "/images/news/gartner.svg",
     imageWidth: 248,
     imageHeight: 170,
     title:
-      "LeewayHertz Recognized as a Representative Vendor in Gartner's 2024 Hype Cycle Report for Generative AI",
+      "Riveo AI Recognized as a Representative Vendor in Gartner's 2024 Hype Cycle Report for Generative AI",
   },
   {
     image: "/images/news/sp-global.png",
     imageWidth: 365,
     imageHeight: 250,
     title:
-      "LeewayHertz Featured in S&P Global's Piece on AI's Impact on Private Equity",
+      "Riveo AI Featured in S&P Global's Piece on AI's Impact on Private Equity",
   },
 ];
 

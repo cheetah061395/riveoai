@@ -1,92 +1,44 @@
 "use client";
 
-import { ChevronDown, Menu } from "lucide-react";
-
-const navItems = [
-  { label: "SERVICES", hasDropdown: true },
-  { label: "INDUSTRIES", hasDropdown: true },
-  { label: "INSIGHTS", hasDropdown: false },
-  { label: "WORK", hasDropdown: false },
-  { label: "ABOUT", hasDropdown: false },
-];
+import Image from "next/image";
+import { Menu } from "lucide-react";
+import { useState } from "react";
+import { ConsultationModal } from "./ConsultationModal";
 
 export default function Header() {
+  const [showForm, setShowForm] = useState(false);
+
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-white border-b border-gray-200">
-      <div className="mx-auto flex h-[60px] max-w-[1280px] items-center justify-between px-[40px]">
+    <header className="fixed top-0 left-0 z-50 w-full border-b border-black/[0.06] bg-white">
+      <div className="mx-auto flex h-[68px] max-w-[1280px] items-center justify-between px-[40px]">
         {/* Logo */}
         <a href="/" className="flex items-center gap-2 shrink-0">
-          {/* Blue diamond squares icon */}
-          <svg
-            width="32"
-            height="32"
-            viewBox="0 0 32 32"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            <rect
-              x="2"
-              y="2"
-              width="12"
-              height="12"
-              rx="1"
-              fill="#1B54F8"
-            />
-            <rect
-              x="18"
-              y="2"
-              width="12"
-              height="12"
-              rx="1"
-              fill="#1B54F8"
-            />
-            <rect
-              x="2"
-              y="18"
-              width="12"
-              height="12"
-              rx="1"
-              fill="#1B54F8"
-            />
-            <rect
-              x="18"
-              y="18"
-              width="12"
-              height="12"
-              rx="1"
-              fill="#1B54F8"
-              opacity="0.5"
-            />
-          </svg>
+          <Image
+            src="/images/logo.png"
+            alt="Riveo AI logo"
+            width={240}
+            height={132}
+            className="h-[60px] w-auto object-contain"
+          />
           <div className="flex flex-col leading-tight">
-            <span className="text-[18px] font-bold tracking-tight text-black">
-              LeewayHertz
+            <span className="text-[28px] font-bold tracking-tight text-[#0a0a0a]">
+              Riveo AI
             </span>
-            <span className="text-[10px] text-gray-500 tracking-wide">
-              A Hackett Group Company
+            <span className="text-[11px] tracking-[1px] text-[#999]">
+              AI Solutions Company
             </span>
           </div>
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-[40px] md:flex">
-          {navItems.map((item) => (
-            <a
-              key={item.label}
-              href="#"
-              className="flex items-center gap-1 text-[14px] font-medium uppercase tracking-[1px] text-lh-text-primary transition-colors hover:text-lh-blue"
-            >
-              {item.label}
-              {item.hasDropdown && <ChevronDown className="h-4 w-4" />}
-            </a>
-          ))}
-          <a
-            href="#"
-            className="rounded-[4px] bg-lh-blue px-[24px] py-[10px] text-[14px] font-medium uppercase tracking-[1px] text-white transition-colors hover:bg-lh-blue-hover"
+        <nav className="hidden items-center md:flex">
+          <button
+            type="button"
+            onClick={() => setShowForm(true)}
+            className="group cursor-pointer rounded-full bg-[#1B54F8] px-[28px] py-[10px] text-[13px] font-semibold uppercase tracking-[1.5px] text-white transition-all duration-300 hover:bg-[#2460ff] hover:shadow-[0_0_30px_-8px_rgba(27,84,248,0.4)]"
           >
-            CONTACT US
-          </a>
+            Contact Us
+          </button>
         </nav>
 
         {/* Mobile Hamburger */}
@@ -95,9 +47,11 @@ export default function Header() {
           className="flex items-center justify-center md:hidden"
           aria-label="Open menu"
         >
-          <Menu className="h-6 w-6 text-lh-text-primary" />
+          <Menu className="h-5 w-5 text-[#333]" />
         </button>
       </div>
+
+      <ConsultationModal open={showForm} onClose={() => setShowForm(false)} />
     </header>
   );
 }
