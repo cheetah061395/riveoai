@@ -4,7 +4,6 @@ import TrustBadges from "@/components/TrustBadges";
 import StatsSection from "@/components/StatsSection";
 import ServicesSection from "@/components/ServicesSection";
 import BigBrandsSection from "@/components/BigBrandsSection";
-import IndustriesSection from "@/components/IndustriesSection";
 import PortfolioSection from "@/components/PortfolioSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import MentionedInSection from "@/components/MentionedInSection";
@@ -24,7 +23,6 @@ export default function Home() {
         <StatsSection />
         <ServicesSection />
         <BigBrandsSection />
-        <IndustriesSection />
         <PortfolioSection />
         <TestimonialsSection />
         <MentionedInSection />
