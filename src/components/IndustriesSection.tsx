@@ -16,12 +16,12 @@ const industries = [
 
 export default function IndustriesSection() {
   return (
-    <section className="relative w-full bg-white px-6 py-[80px] md:px-[40px] md:py-[120px]">
+    <section className="relative w-full bg-white px-6 py-[60px] md:px-[40px] md:py-[100px]">
       <div className="mx-auto max-w-[1280px]">
         {/* Header */}
-        <div className="mb-[56px] flex flex-col items-center text-center">
+        <div className="mb-[32px] md:mb-[48px] flex flex-col items-center text-center">
           <h2
-            className="mb-[12px] text-[30px] font-normal tracking-tight text-[#0a0a0a] md:text-[48px]"
+            className="text-[26px] font-bold tracking-tight text-[#0a0a0a] md:text-[48px]"
             style={{
               fontFamily: 'Georgia, Times, "Times New Roman", serif',
             }}
@@ -37,8 +37,8 @@ export default function IndustriesSection() {
               key={industry}
               className="flex items-center gap-3 py-[10px]"
             >
-              <span className="h-[5px] w-[5px] shrink-0 rounded-full bg-[#1B54F8]" />
-              <span className="text-[14px] text-[#333]">
+              <span className="h-[7px] w-[7px] shrink-0 rounded-full bg-[#1B54F8]" />
+              <span className="text-[20px] text-[#333]">
                 {industry}
               </span>
             </div>

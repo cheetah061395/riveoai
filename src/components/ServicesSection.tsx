@@ -1,42 +1,47 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
+import { ConsultationModal } from "./ConsultationModal";
 
 const services = [
   {
     icon: "/images/icons/ai-development.svg",
     title: "AI Development & Integration",
     description:
-      "From automating repetitive tasks to unlocking insights buried in your data, we build AI solutions that save you time and money. Seamlessly integrated into your existing tools and workflows so you see results from day one.",
+      "We connect AI to the tools you already use, so the manual work happens automatically. Think invoices that process themselves, client emails that get sorted and flagged, and reports that generate overnight. No new software to learn.",
   },
   {
     icon: "/images/icons/ai-agents.svg",
     title: "AI Agents Development",
     description:
-      "We build AI agents that handle your busywork — research, data analysis, document review, and more. Whether it's a single assistant or a team of agents working together, we configure them using the best models available to save your team hours every week.",
+      "We build AI agents that actually think and act on your behalf. They follow up with leads the moment they come in, answer client questions 24/7, and handle multi-step tasks your team used to do manually. Like hiring a new employee that works around the clock.",
   },
 ];
 
 export default function ServicesSection() {
+  const [showForm, setShowForm] = useState(false);
+
   return (
-    <section className="relative w-full bg-[#f6f5f3] px-6 py-[80px] md:px-[40px] md:py-[120px]">
+    <section className="relative w-full bg-[#f6f5f3] px-6 py-[60px] md:px-[40px] md:py-[100px]">
       <div className="mx-auto max-w-[1280px]">
         {/* Header */}
-        <div className="mb-[48px] md:mb-[80px] flex flex-col items-center text-center">
+        <div className="mb-[40px] md:mb-[56px] flex flex-col items-center text-center">
           <h2
-            className="mb-[16px] text-[30px] font-normal leading-[1.2] tracking-tight text-[#0a0a0a] md:text-[48px]"
+            className="mb-[16px] text-[26px] font-bold leading-[1.2] tracking-tight text-[#0a0a0a] md:text-[48px]"
             style={{
               fontFamily: 'Georgia, Times, "Times New Roman", serif',
             }}
           >
-            Supercharge your business
-            <br />
-with AI
+            Your team&apos;s busywork? AI handles that now.
           </h2>
-          <p className="max-w-[520px] text-[17px] leading-[1.7] text-[#777]">
-            Automate tedious processes with AI. Grow faster and more
-            efficiently.
-          </p>
+          <button
+            type="button"
+            onClick={() => setShowForm(true)}
+            className="mt-[8px] cursor-pointer rounded-full bg-[#1B54F8] px-10 py-4 text-[15px] font-bold tracking-normal text-white transition-all duration-300 hover:bg-[#2460ff] hover:shadow-[0_0_50px_-10px_rgba(27,84,248,0.4)]"
+          >
+            Get a Free Consultation
+          </button>
         </div>
 
         {/* Service Cards */}
@@ -71,6 +76,8 @@ with AI
             </div>
           ))}
         </div>
+
+        <ConsultationModal open={showForm} onClose={() => setShowForm(false)} />
       </div>
     </section>
   );

@@ -14,10 +14,9 @@ export default function Home() {
       <main className="pt-[68px]">
         <HeroSection />
 
-        <ServicesSection />
         <IndustriesSection />
+        <ServicesSection />
         <EngagementModelsSection />
-        <GetStartedSection />
       </main>
       <Footer />
     </>

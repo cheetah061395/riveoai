@@ -43,15 +43,6 @@ export default function HeroSection() {
             className="group mt-10 flex cursor-pointer items-center gap-3 rounded-full bg-[#1B54F8] px-8 py-4 text-[15px] font-semibold tracking-wide text-white transition-all duration-300 hover:bg-[#2460ff] hover:shadow-[0_0_40px_-8px_rgba(27,84,248,0.5)]"
           >
             Get in touch
-            <svg
-              className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
           </button>
         </div>
 

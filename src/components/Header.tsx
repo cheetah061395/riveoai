@@ -20,34 +20,18 @@ export default function Header() {
             height={132}
             className="h-[60px] w-auto object-contain"
           />
-          <div className="flex flex-col leading-tight">
-            <span className="text-[28px] font-bold tracking-tight text-[#0a0a0a]">
-              Riveo AI
-            </span>
-            <span className="text-[11px] tracking-[1px] text-[#999]">
-              AI Solutions Company
-            </span>
-          </div>
+          <span className="text-[28px] font-bold tracking-tight text-[#0a0a0a]">
+            Riveo AI
+          </span>
         </a>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden items-center md:flex">
-          <button
-            type="button"
-            onClick={() => setShowForm(true)}
-            className="group cursor-pointer rounded-full bg-[#1B54F8] px-[28px] py-[10px] text-[13px] font-semibold uppercase tracking-[1.5px] text-white transition-all duration-300 hover:bg-[#2460ff] hover:shadow-[0_0_30px_-8px_rgba(27,84,248,0.4)]"
-          >
-            Contact Us
-          </button>
-        </nav>
-
-        {/* Mobile Hamburger */}
+        {/* CTA Button */}
         <button
           type="button"
-          className="flex items-center justify-center md:hidden"
-          aria-label="Open menu"
+          onClick={() => setShowForm(true)}
+          className="hidden cursor-pointer rounded-full bg-[#1B54F8] px-[32px] py-[12px] text-[15px] font-bold tracking-normal text-white transition-all duration-300 hover:bg-[#2460ff] hover:shadow-[0_0_30px_-8px_rgba(27,84,248,0.4)] md:inline-block"
         >
-          <Menu className="h-5 w-5 text-[#333]" />
+          Free Consultation
         </button>
       </div>
 
