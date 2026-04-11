@@ -1,6 +1,6 @@
 export default function EngagementModelsSection() {
   return (
-    <section className="relative w-full overflow-hidden bg-[#060e1a] px-[40px] py-[100px]">
+    <section className="relative w-full overflow-hidden bg-[#060e1a] px-6 py-[80px] md:px-[40px] md:py-[120px]">
       {/* Subtle radial glow */}
       <div
         className="pointer-events-none absolute inset-0"
@@ -12,7 +12,7 @@ export default function EngagementModelsSection() {
 
       <div className="relative mx-auto max-w-[800px] text-center">
         <p
-          className="text-[30px] font-normal leading-[1.5] text-white/90 md:text-[38px]"
+          className="text-[22px] font-normal leading-[1.5] text-white/90 md:text-[38px]"
           style={{
             fontFamily: 'Georgia, Times, "Times New Roman", serif',
           }}

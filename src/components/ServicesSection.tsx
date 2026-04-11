@@ -19,19 +19,19 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section className="relative w-full bg-[#f6f5f3] px-[40px] py-[120px]">
+    <section className="relative w-full bg-[#f6f5f3] px-6 py-[80px] md:px-[40px] md:py-[120px]">
       <div className="mx-auto max-w-[1280px]">
         {/* Header */}
-        <div className="mb-[80px] flex flex-col items-center text-center">
+        <div className="mb-[48px] md:mb-[80px] flex flex-col items-center text-center">
           <h2
-            className="mb-[16px] text-[40px] font-normal leading-[1.2] tracking-tight text-[#0a0a0a] md:text-[48px]"
+            className="mb-[16px] text-[30px] font-normal leading-[1.2] tracking-tight text-[#0a0a0a] md:text-[48px]"
             style={{
               fontFamily: 'Georgia, Times, "Times New Roman", serif',
             }}
           >
             Supercharge your business
             <br />
-            <span className="text-[#1B54F8]">with AI</span>
+with AI
           </h2>
           <p className="max-w-[520px] text-[17px] leading-[1.7] text-[#777]">
             Automate tedious processes with AI. Grow faster and more
@@ -44,10 +44,8 @@ export default function ServicesSection() {
           {services.map((service) => (
             <div
               key={service.title}
-              className="group relative overflow-hidden rounded-[16px] border border-[#e4e2de] bg-white p-[48px] transition-all duration-500 hover:border-[#1B54F8]/20 hover:shadow-[0_20px_60px_-20px_rgba(0,0,0,0.1)]"
+              className="relative overflow-hidden rounded-[16px] border border-[#e4e2de] bg-white p-[48px]"
             >
-              {/* Hover gradient reveal */}
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#1B54F8]/[0.02] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
               <div className="relative">
                 {/* Icon */}
@@ -69,23 +67,6 @@ export default function ServicesSection() {
                   {service.description}
                 </p>
 
-                {/* Arrow */}
-                <div className="mt-[28px] flex items-center gap-2 text-[14px] font-semibold text-[#1B54F8] opacity-0 transition-all duration-300 group-hover:opacity-100">
-                  Learn more
-                  <svg
-                    className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2.5}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
-                  </svg>
-                </div>
               </div>
             </div>
           ))}

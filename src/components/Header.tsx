@@ -10,7 +10,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 z-50 w-full border-b border-black/[0.06] bg-white">
-      <div className="mx-auto flex h-[68px] max-w-[1280px] items-center justify-between px-[40px]">
+      <div className="mx-auto flex h-[68px] max-w-[1280px] items-center justify-between px-4 md:px-[40px]">
         {/* Logo */}
         <a href="/" className="flex items-center gap-2 shrink-0">
           <Image

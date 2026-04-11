@@ -39,14 +39,13 @@ export function ConsultationModal({
         ) : (
           <>
             <h3 className="mb-[8px] text-[24px] font-bold text-[#100F0F]">
-              Free 30 Min Consultation
+              Free 30-Min AI Consultation
             </h3>
             <p className="mb-[8px] text-[15px] text-[#555]">
-              Understand your existing set-up, goals, and advise on how AI can
-              help your business
+              We&apos;ll assess your current setup and show you where AI can drive results.
             </p>
             <p className="mb-[24px] text-[14px] text-[#888]">
-              Fill out the form and we will contact you ASAP
+              Fill out the form and we&apos;ll be in touch shortly.
             </p>
             <form
               onSubmit={(e) => {
@@ -105,7 +104,7 @@ export function ConsultationModal({
                 Submit
               </button>
             </form>
-            <p className="mt-[16px] text-center text-[14px] text-[#555]">
+            <p className="mt-[16px] text-center text-[16px] text-[#555]">
               Or email us:{" "}
               <a
                 href="mailto:hello@riveoai.com"

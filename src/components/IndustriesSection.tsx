@@ -1,41 +1,33 @@
 const industries = [
-  "Financial Services",
-  "Health & Wellness",
-  "Home Services",
+  "Accounting & Tax Firms",
+  "Medical & Dental Practices",
+  "Plumbing, HVAC & Cleaning",
   "Automotive",
-  "Professional Services",
-  "Personal Services",
-  "Education & Childcare",
-  "Hospitality",
-  "Fitness & Recreation",
-  "Logistics & Transportation",
-  "Agriculture",
-  "Religious Organizations",
-  "Nonprofit Organizations",
-  "Retail (Independent/Local)",
-  "Food & Beverage",
-  "Senior Care",
-  "Pet Services",
-  "Trades & Skilled Labor",
-  "Creative Services",
-  "Security Services",
+  "Daycares & Tutoring Centers",
+  "Hotels & Restaurants",
+  "Gyms",
+  "Trucking & Moving Companies",
+  "Nonprofits",
+  "Local Shops & Boutiques",
+  "Restaurants & Cafes",
+  "Senior Living & Home Care",
+  "And more...",
 ];
 
 export default function IndustriesSection() {
   return (
-    <section className="relative w-full bg-white px-[40px] py-[100px]">
+    <section className="relative w-full bg-white px-6 py-[80px] md:px-[40px] md:py-[120px]">
       <div className="mx-auto max-w-[1280px]">
         {/* Header */}
         <div className="mb-[56px] flex flex-col items-center text-center">
           <h2
-            className="mb-[12px] text-[40px] font-normal tracking-tight text-[#0a0a0a] md:text-[48px]"
+            className="mb-[12px] text-[30px] font-normal tracking-tight text-[#0a0a0a] md:text-[48px]"
             style={{
               fontFamily: 'Georgia, Times, "Times New Roman", serif',
             }}
           >
-            Businesses we <span className="text-[#1B54F8]">serve</span>
+            Businesses we serve
           </h2>
-          <div className="mt-2 h-[2px] w-[48px] rounded-full bg-[#1B54F8]" />
         </div>
 
         {/* Industry Grid */}
@@ -43,10 +35,10 @@ export default function IndustriesSection() {
           {industries.map((industry) => (
             <div
               key={industry}
-              className="group flex items-center gap-3 border-b border-[#f0efed] py-[14px] transition-colors duration-200 hover:border-[#1B54F8]/20"
+              className="flex items-center gap-3 py-[10px]"
             >
-              <span className="h-[5px] w-[5px] shrink-0 rounded-full bg-[#1B54F8]/40 transition-all duration-200 group-hover:bg-[#1B54F8] group-hover:scale-125" />
-              <span className="text-[14px] text-[#555] transition-colors duration-200 group-hover:text-[#0a0a0a]">
+              <span className="h-[5px] w-[5px] shrink-0 rounded-full bg-[#1B54F8]" />
+              <span className="text-[14px] text-[#333]">
                 {industry}
               </span>
             </div>

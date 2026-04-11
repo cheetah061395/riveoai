@@ -16,7 +16,7 @@ export default function HeroSection() {
         }}
       />
 
-      <div className="relative mx-auto flex max-w-[1280px] flex-col items-center px-10 pt-[140px] pb-[100px] md:flex-row md:items-center">
+      <div className="relative mx-auto flex max-w-[1280px] flex-col items-center px-6 pt-[100px] pb-[80px] md:flex-row md:items-center md:px-10 md:pt-[140px] md:pb-[100px]">
         {/* Left Column */}
         <div className="flex w-full flex-col items-center md:w-[55%] md:items-start">
           <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-[12px] tracking-[2px] uppercase text-white/60 backdrop-blur-sm">
@@ -33,8 +33,8 @@ export default function HeroSection() {
             AI development company
           </h1>
 
-          <p className="mt-6 max-w-[480px] text-center text-[17px] font-normal leading-[1.8] text-white/60 md:text-left md:text-[19px]">
-            We build cutting-edge AI solutions for businesses. Learn how to use the latest tech and 10x your team&apos;s productivity today.
+          <p className="mt-6 max-w-[520px] text-center text-[22px] font-bold leading-[1.7] text-white md:text-left md:text-[26px]">
+            We build cutting-edge <span className="text-[#7da1ff]">AI solutions for small businesses</span>. 10x your team&apos;s productivity today.
           </p>
 
           <button
@@ -56,8 +56,8 @@ export default function HeroSection() {
         </div>
 
         {/* Right Column — Orbital rings */}
-        <div className="relative mt-16 flex w-full items-center justify-center md:mt-0 md:w-[45%]">
-          <div className="relative h-[520px] w-[520px]">
+        <div className="relative mt-12 flex w-full items-center justify-center md:mt-0 md:w-[45%]">
+          <div className="relative h-[280px] w-[280px] md:h-[520px] md:w-[520px]">
             {/* Outer ring */}
             <div
               className="absolute inset-0 rounded-full border border-white/[0.06]"
@@ -69,7 +69,7 @@ export default function HeroSection() {
 
             {/* Middle ring */}
             <div
-              className="absolute inset-[80px] rounded-full border border-white/[0.08]"
+              className="absolute inset-[44px] md:inset-[80px] rounded-full border border-white/[0.08]"
               style={{ animation: "spin 25s linear infinite reverse" }}
             >
               <div className="absolute -right-[4px] top-1/2 h-[8px] w-[8px] -translate-y-1/2 rounded-full bg-[#7da1ff] shadow-[0_0_10px_rgba(125,161,255,0.5)]" />
@@ -78,35 +78,46 @@ export default function HeroSection() {
 
             {/* Inner ring */}
             <div
-              className="absolute inset-[160px] rounded-full border border-white/[0.10]"
+              className="absolute inset-[88px] md:inset-[160px] rounded-full border border-white/[0.10]"
               style={{ animation: "spin 15s linear infinite" }}
             >
               <div className="absolute -top-[3px] right-1/4 h-[6px] w-[6px] -translate-x-1/2 rounded-full bg-[#1B54F8]/70 shadow-[0_0_8px_rgba(27,84,248,0.4)]" />
             </div>
 
             {/* Center glow */}
-            <div className="absolute inset-[210px] rounded-full bg-[#1B54F8]/[0.04] backdrop-blur-sm" />
-            <div className="absolute inset-[215px] flex items-center justify-center rounded-full border border-white/[0.08]">
-              <span className="text-[28px] font-bold tracking-[6px] uppercase text-white/40">
+            <div className="absolute inset-[112px] md:inset-[210px] rounded-full bg-[#1B54F8]/[0.04] backdrop-blur-sm" />
+            <div className="absolute inset-[116px] md:inset-[215px] flex items-center justify-center rounded-full border border-white/[0.08]">
+              <span className="text-[18px] md:text-[28px] font-bold tracking-[6px] uppercase text-white/40">
                 AI
               </span>
             </div>
 
-            {/* Use case bubbles */}
-            <div className="absolute -top-[10px] right-[40px] rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-2 text-[12px] tracking-wide text-white/50 backdrop-blur-sm">
-              Customer Acquisition
-            </div>
-            <div className="absolute top-[100px] -right-[30px] rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-2 text-[12px] tracking-wide text-white/50 backdrop-blur-sm">
-              Customer Support
-            </div>
-            <div className="absolute bottom-[80px] -left-[20px] rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-2 text-[12px] tracking-wide text-white/50 backdrop-blur-sm">
-              Workflow Automation
-            </div>
-            <div className="absolute bottom-[60px] right-[20px] rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-2 text-[12px] tracking-wide text-white/50 backdrop-blur-sm">
-              Document Processing
-            </div>
-            <div className="absolute top-[260px] -left-[40px] rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-2 text-[12px] tracking-wide text-white/50 backdrop-blur-sm">
-              Data Entry
+            {/* Use case bubbles — evenly spaced around circle, hidden on mobile */}
+            <div className="hidden md:block">
+              {/* 12 o'clock */}
+              <div className="absolute -top-[16px] left-1/2 -translate-x-1/2 rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-2 text-[12px] tracking-wide text-white/50 backdrop-blur-sm">
+                Customer Support
+              </div>
+              {/* 2 o'clock */}
+              <div className="absolute top-[60px] -right-[60px] rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-2 text-[12px] tracking-wide text-white/50 backdrop-blur-sm">
+                Lead Follow-up
+              </div>
+              {/* 4 o'clock */}
+              <div className="absolute top-[250px] -right-[80px] rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-2 text-[12px] tracking-wide text-white/50 backdrop-blur-sm">
+                Document Processing
+              </div>
+              {/* 8 o'clock */}
+              <div className="absolute top-[250px] -left-[90px] rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-2 text-[12px] tracking-wide text-white/50 backdrop-blur-sm">
+                Voicemail &amp; Email Triage
+              </div>
+              {/* 9 o'clock — below voicemail */}
+              <div className="absolute top-[390px] -left-[40px] rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-2 text-[12px] tracking-wide text-white/50 backdrop-blur-sm">
+                Quoting &amp; Proposals
+              </div>
+              {/* 10 o'clock */}
+              <div className="absolute top-[60px] -left-[70px] rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-2 text-[12px] tracking-wide text-white/50 backdrop-blur-sm">
+                Workflow Automation
+              </div>
             </div>
 
           </div>
