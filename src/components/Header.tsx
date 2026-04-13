@@ -25,14 +25,22 @@ export default function Header() {
           </span>
         </a>
 
-        {/* CTA Button */}
-        <button
-          type="button"
-          onClick={() => setShowForm(true)}
-          className="hidden cursor-pointer rounded-full bg-[#1B54F8] px-[32px] py-[12px] text-[15px] font-bold tracking-normal text-white transition-all duration-300 hover:bg-[#2460ff] hover:shadow-[0_0_30px_-8px_rgba(27,84,248,0.4)] md:inline-block"
-        >
-          Free Consultation
-        </button>
+        {/* Nav */}
+        <div className="flex items-center gap-8">
+          <a
+            href="/about"
+            className="hidden text-[15px] font-medium text-[#333] transition-colors hover:text-[#1B54F8] md:inline-block"
+          >
+            About Us
+</a>
+          <button
+            type="button"
+            onClick={() => setShowForm(true)}
+            className="hidden cursor-pointer rounded-full bg-[#1B54F8] px-[32px] py-[12px] text-[15px] font-bold tracking-normal text-white transition-all duration-300 hover:bg-[#2460ff] hover:shadow-[0_0_30px_-8px_rgba(27,84,248,0.4)] md:inline-block"
+          >
+            Free Consultation
+          </button>
+        </div>
       </div>
 
       <ConsultationModal open={showForm} onClose={() => setShowForm(false)} />
