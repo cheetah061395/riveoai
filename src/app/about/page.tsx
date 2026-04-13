@@ -112,19 +112,30 @@ export default function AboutPage() {
                 className="h-[320px] w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
               />
               <div className="flex flex-1 flex-col p-[32px]">
-                <h3 className="text-[20px] font-bold tracking-tight text-[#0a0a0a]">
-                  Shirley Jiang
-                </h3>
+                <div className="flex items-center gap-2">
+                  <h3 className="text-[20px] font-bold tracking-tight text-[#0a0a0a]">
+                    Shirley Jiang
+                  </h3>
+                  <a
+                    href="https://www.linkedin.com/in/shirley-jiang/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#999] transition-colors hover:text-[#0077b5]"
+                    aria-label="LinkedIn"
+                  >
+                    <svg className="h-[16px] w-[16px]" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                  </a>
+                </div>
                 <p className="mt-1 text-[15px] font-medium text-[#1B54F8]">
                   CEO
                 </p>
                 <a
                   href="mailto:shirley@riveoai.com"
-                  className="mt-4 block text-[15px] text-[#1B54F8] transition-colors hover:text-[#1445d4] hover:underline"
+                  className="mt-3 block text-[14px] text-[#555] transition-colors hover:text-[#1B54F8]"
                 >
                   shirley@riveoai.com
                 </a>
-                <p className="mt-auto pt-4 text-[14px] leading-[1.6] text-[#888]">
+                <p className="mt-3 text-[14px] leading-[1.6] text-[#888]">
                   8+ years in software at SpaceX, Fireworks AI, and other
                   leading tech companies
                 </p>
@@ -147,12 +158,14 @@ export default function AboutPage() {
                 <p className="mt-1 text-[15px] font-medium text-[#1B54F8]">
                   Engineer
                 </p>
-                <a
-                  href="mailto:jason@riveoai.com"
-                  className="mt-4 block text-[15px] text-[#1B54F8] transition-colors hover:text-[#1445d4] hover:underline"
-                >
-                  jason@riveoai.com
-                </a>
+                <div className="mt-3 flex items-center gap-3">
+                  <a
+                    href="mailto:jason@riveoai.com"
+                    className="text-[14px] text-[#555] transition-colors hover:text-[#1B54F8]"
+                  >
+                    jason@riveoai.com
+                  </a>
+                </div>
                 <p className="mt-3 text-[14px] leading-[1.6] text-[#888]">
                   B.S. Computer Science, UC Santa Barbara
                 </p>
@@ -163,19 +176,30 @@ export default function AboutPage() {
             <div className="group flex flex-col overflow-hidden rounded-[16px] border border-[#e4e2de] bg-white transition-all duration-300 hover:shadow-[0_8px_30px_-12px_rgba(0,0,0,0.12)] sm:col-start-1 sm:col-end-3 sm:mx-auto sm:max-w-[calc(50%-10px)] lg:col-auto lg:mx-0 lg:max-w-none">
               <div className="h-[320px] w-full bg-[#e4e2de]" />
               <div className="flex flex-1 flex-col p-[32px]">
-                <h3 className="text-[20px] font-bold tracking-tight text-[#0a0a0a]">
-                  Glenn Platkin
-                </h3>
+                <div className="flex items-center gap-2">
+                  <h3 className="text-[20px] font-bold tracking-tight text-[#0a0a0a]">
+                    Glenn Platkin
+                  </h3>
+                  <a
+                    href="https://www.linkedin.com/in/glennplatkin/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#999] transition-colors hover:text-[#0077b5]"
+                    aria-label="LinkedIn"
+                  >
+                    <svg className="h-[16px] w-[16px]" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                  </a>
+                </div>
                 <p className="mt-1 text-[15px] font-medium text-[#1B54F8]">
                   Advisor
                 </p>
                 <a
                   href="mailto:glenn@riveoai.com"
-                  className="mt-4 block text-[15px] text-[#1B54F8] transition-colors hover:text-[#1445d4] hover:underline"
+                  className="mt-3 block text-[14px] text-[#555] transition-colors hover:text-[#1B54F8]"
                 >
                   glenn@riveoai.com
                 </a>
-                <p className="mt-auto pt-4 text-[14px] leading-[1.6] text-[#888]">
+                <p className="mt-3 text-[14px] leading-[1.6] text-[#888]">
                   Software executive with 30+ years of experience partnering
                   with Fortune 500 companies
                 </p>
