@@ -32,7 +32,7 @@ export default function EngagementModelsSection() {
         >
           We deliver full end-to-end solutions.
           <br />
-          Providing ongoing support, training, and education on the latest AI tools.
+          Providing ongoing support, training, and education on the latest AI solutions.
         </p>
       </div>
     </section>
