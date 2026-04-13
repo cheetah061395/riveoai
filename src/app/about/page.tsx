@@ -41,7 +41,7 @@ export default function AboutPage() {
 
           <div className="relative mx-auto flex max-w-[1280px] flex-col gap-12 lg:flex-row lg:items-center lg:justify-between">
             {/* Text */}
-            <div className="max-w-[500px]">
+            <div className="max-w-[520px]">
               <h1
                 className="text-[30px] font-normal leading-[1.2] text-white md:text-[52px]"
                 style={{
@@ -50,12 +50,32 @@ export default function AboutPage() {
               >
                 About Us
               </h1>
-              <p className="mt-6 text-[17px] leading-[1.8] text-white/60">
+              <p className="mt-6 text-[17px] leading-[1.8] text-white/80">
                 Riveo AI builds custom AI solutions for small businesses. We
                 automate the busywork like quotes, follow-ups, scheduling, and
-                paperwork inside the tools your team already uses, so you can
-                grow without hiring.
+                paperwork inside the tools your team already uses.
               </p>
+
+              {/* Our Story */}
+              <div className="mt-10 border-l-2 border-[#1B54F8] pl-6">
+                <h2
+                  className="text-[20px] font-normal leading-[1.2] text-white md:text-[24px]"
+                  style={{
+                    fontFamily: 'Georgia, Times, "Times New Roman", serif',
+                  }}
+                >
+                  Our Story
+                </h2>
+                <p className="mt-4 text-[16px] leading-[1.8] text-white/80">
+                  After years at leading AI companies, I saw a gap. The most
+                  powerful tools were locked inside big tech. I started Riveo to
+                  bring that same AI to small businesses so they can scale
+                  faster and work smarter.
+                </p>
+                <p className="mt-4 text-[14px] font-semibold tracking-wide text-[#7da1ff]">
+                  —Shirley, Founder &amp; CEO
+                </p>
+              </div>
             </div>
 
             {/* Contact Form */}
@@ -96,7 +116,7 @@ export default function AboutPage() {
                   Shirley Jiang
                 </h3>
                 <p className="mt-1 text-[15px] font-medium text-[#1B54F8]">
-                  President
+                  CEO
                 </p>
                 <a
                   href="mailto:shirley@riveoai.com"

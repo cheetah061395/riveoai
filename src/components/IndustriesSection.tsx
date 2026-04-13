@@ -9,7 +9,6 @@ const industries = [
   "Trucking & Moving Companies",
   "Nonprofits",
   "Local Shops & Boutiques",
-  "Restaurants & Cafes",
   "Senior Living & Home Care",
   "And more...",
 ];
