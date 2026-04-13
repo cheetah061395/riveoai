@@ -133,7 +133,7 @@ export default function AboutPage() {
                 >
                   jason@riveoai.com
                 </a>
-                <p className="mt-auto pt-4 text-[14px] leading-[1.6] text-[#888]">
+                <p className="mt-3 text-[14px] leading-[1.6] text-[#888]">
                   B.S. Computer Science, UC Santa Barbara
                 </p>
               </div>
