@@ -51,7 +51,7 @@ export default function AboutPage() {
                 About Us
               </h1>
               <p className="mt-6 text-[17px] leading-[1.8] text-white/60">
-                Riveo AI builds custom AI agents for small businesses. We
+                Riveo AI builds custom AI solutions for small businesses. We
                 automate the busywork like quotes, follow-ups, scheduling, and
                 paperwork inside the tools your team already uses, so you can
                 grow without hiring.
