@@ -35,7 +35,7 @@ export function ConsultationForm() {
         rel="noopener noreferrer"
         className="block rounded-[6px] bg-[#1B54F8] py-[14px] text-center text-[16px] font-semibold text-white transition-colors hover:bg-[#1545d4]"
       >
-        Book a Time &rarr;
+        Book a call
       </a>
 
       {/* Divider */}
