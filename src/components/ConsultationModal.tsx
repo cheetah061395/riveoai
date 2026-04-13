@@ -97,11 +97,17 @@ export function ConsultationModal({
                 required
                 className="rounded-[6px] border border-[#ddd] px-[16px] py-[12px] text-[16px] outline-none focus:border-[#1B54F8]"
               />
+              <textarea
+                name="message"
+                placeholder="Message"
+                rows={1}
+                className="resize-none rounded-[6px] border border-[#ddd] px-[16px] py-[12px] text-[16px] outline-none focus:border-[#1B54F8]"
+              />
               <button
                 type="submit"
                 className="mt-[8px] cursor-pointer rounded-[6px] bg-[#1B54F8] py-[14px] text-[16px] font-semibold text-white transition-colors hover:bg-[#1545d4]"
               >
-                Submit
+                Contact Us
               </button>
             </form>
             <p className="mt-[16px] text-center text-[16px] text-[#555]">

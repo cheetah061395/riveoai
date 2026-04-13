@@ -1,118 +1,254 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export default function AboutPage() {
+  const [submitted, setSubmitted] = useState(false);
   return (
     <>
       <Header />
-      <main className="pt-[68px] bg-white">
-        {/* Hero */}
-        <section className="w-full bg-[#f6f5f3] px-6 py-[80px] md:px-[40px] md:py-[120px]">
-          <div className="mx-auto max-w-[1280px]">
-            <h1
-              className="text-[30px] font-bold tracking-tight text-[#0a0a0a] md:text-[48px]"
-              style={{
-                fontFamily: 'Georgia, Times, "Times New Roman", serif',
-              }}
-            >
-              About Riveo AI
-            </h1>
-            <p className="mt-4 max-w-[600px] text-[17px] leading-[1.8] text-[#555]">
-              Riveo AI builds custom AI agents for small businesses. We
-              automate the busywork like quotes, follow-ups, scheduling, and
-              paperwork inside the tools your team already uses, so you can
-              grow without hiring.
-            </p>
+      <main className="pt-[68px]">
+        {/* Hero + Contact Form */}
+        <section
+          className="relative w-full overflow-hidden px-6 py-[80px] md:px-[40px] md:py-[120px]"
+          style={{
+            background:
+              "linear-gradient(135deg, #060e1a 0%, #0f2847 50%, #060e1a 100%)",
+          }}
+        >
+          {/* Noise grain */}
+          <div
+            className="pointer-events-none absolute inset-0 opacity-[0.03]"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+            }}
+          />
+          {/* Corner glows */}
+          <div
+            className="pointer-events-none absolute top-0 left-0 h-[300px] w-[300px] opacity-20"
+            style={{
+              background:
+                "radial-gradient(circle at 0% 0%, rgba(27,84,248,0.3) 0%, transparent 70%)",
+            }}
+          />
+          <div
+            className="pointer-events-none absolute bottom-0 right-0 h-[300px] w-[300px] opacity-20"
+            style={{
+              background:
+                "radial-gradient(circle at 100% 100%, rgba(27,84,248,0.3) 0%, transparent 70%)",
+            }}
+          />
+
+          <div className="relative mx-auto flex max-w-[1280px] flex-col gap-12 lg:flex-row lg:items-center lg:justify-between">
+            {/* Text */}
+            <div className="max-w-[500px]">
+              <h1
+                className="text-[30px] font-normal leading-[1.2] text-white md:text-[52px]"
+                style={{
+                  fontFamily: 'Georgia, Times, "Times New Roman", serif',
+                }}
+              >
+                About Us
+              </h1>
+              <p className="mt-6 text-[17px] leading-[1.8] text-white/60">
+                Riveo AI builds custom AI agents for small businesses. We
+                automate the busywork like quotes, follow-ups, scheduling, and
+                paperwork inside the tools your team already uses, so you can
+                grow without hiring.
+              </p>
+            </div>
+
+            {/* Contact Form */}
+            <div className="w-full max-w-[480px] overflow-hidden rounded-[12px] bg-white p-[40px] shadow-2xl">
+              {submitted ? (
+                <div className="py-[20px] text-center">
+                  <h3 className="mb-[8px] text-[24px] font-bold text-[#100F0F]">
+                    Thank you!
+                  </h3>
+                  <p className="text-[16px] text-[#555]">
+                    We&apos;ll be in touch soon.
+                  </p>
+                </div>
+              ) : (
+                <>
+                  <h3 className="mb-[8px] text-[24px] font-bold text-[#100F0F]">
+                    Free 30-Min Consultation
+                  </h3>
+                  <p className="mb-[8px] text-[15px] text-[#555]">
+                    We&apos;ll assess your current setup and show you where AI
+                    can drive results.
+                  </p>
+                  <p className="mb-[24px] text-[14px] text-[#888]">
+                    Fill out the form and we&apos;ll be in touch shortly.
+                  </p>
+                  <form
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      const form = e.currentTarget;
+                      const get = (name: string) =>
+                        (form.elements.namedItem(name) as HTMLInputElement)
+                          .value;
+                      const formData = new URLSearchParams();
+                      formData.append("entry.1496550793", get("company"));
+                      formData.append("entry.1324615949", get("email"));
+                      formData.append("entry.642270581", get("phone"));
+                      fetch(
+                        "https://docs.google.com/forms/d/e/1FAIpQLScMYllv0AkdvViTsw5XUa2lESCjjPV0EG4qeyMk3o3tzcPyeg/formResponse",
+                        {
+                          method: "POST",
+                          body: formData,
+                          mode: "no-cors",
+                        }
+                      );
+                      setSubmitted(true);
+                    }}
+                    className="flex flex-col gap-[16px]"
+                  >
+                    <input
+                      type="text"
+                      name="company"
+                      placeholder="Company"
+                      required
+                      className="rounded-[6px] border border-[#ddd] px-[16px] py-[12px] text-[16px] outline-none focus:border-[#1B54F8]"
+                    />
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Email"
+                      required
+                      className="rounded-[6px] border border-[#ddd] px-[16px] py-[12px] text-[16px] outline-none focus:border-[#1B54F8]"
+                    />
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder="Phone number"
+                      required
+                      className="rounded-[6px] border border-[#ddd] px-[16px] py-[12px] text-[16px] outline-none focus:border-[#1B54F8]"
+                    />
+                    <textarea
+                      name="message"
+                      placeholder="Message"
+                      rows={1}
+                      className="resize-none rounded-[6px] border border-[#ddd] px-[16px] py-[12px] text-[16px] outline-none focus:border-[#1B54F8]"
+                    />
+                    <button
+                      type="submit"
+                      className="mt-[8px] cursor-pointer rounded-[6px] bg-[#1B54F8] py-[14px] text-[16px] font-semibold text-white transition-colors hover:bg-[#1545d4]"
+                    >
+                      Contact Us
+                    </button>
+                  </form>
+                  <p className="mt-[16px] text-center text-[16px] text-[#555]">
+                    Or email us:{" "}
+                    <a
+                      href="mailto:hello@riveoai.com"
+                      className="font-semibold text-[#1B54F8] hover:underline"
+                    >
+                      hello@riveoai.com
+                    </a>
+                  </p>
+                </>
+              )}
+            </div>
           </div>
+
+          {/* Bottom fade */}
+          <div className="absolute bottom-0 left-0 right-0 h-[80px] bg-gradient-to-t from-[#f6f5f3] to-transparent" />
         </section>
 
         {/* Team */}
-        <section className="w-full bg-white px-6 py-[80px] md:px-[40px] md:py-[120px]">
+        <section className="w-full bg-[#f6f5f3] px-6 py-[60px] md:px-[40px] md:py-[100px]">
           <div className="mx-auto max-w-[1280px]">
-            <h2
-              className="mb-12 text-[28px] font-bold tracking-tight text-[#0a0a0a] md:text-[40px]"
-              style={{
-                fontFamily: 'Georgia, Times, "Times New Roman", serif',
-              }}
-            >
-              Team
-            </h2>
+            <div className="mb-[48px] flex flex-col items-center text-center">
+              <h2
+                className="text-[26px] font-bold tracking-tight text-[#0a0a0a] md:text-[48px]"
+                style={{
+                  fontFamily: 'Georgia, Times, "Times New Roman", serif',
+                }}
+              >
+                Team
+              </h2>
+            </div>
           </div>
-          <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-[20px] sm:grid-cols-2 lg:grid-cols-3">
             {/* Shirley */}
-            <div className="overflow-hidden rounded-[16px] border border-[#e5e5e5] bg-white">
+            <div className="group flex flex-col overflow-hidden rounded-[16px] border border-[#e4e2de] bg-white transition-all duration-300 hover:shadow-[0_8px_30px_-12px_rgba(0,0,0,0.12)]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/shirley.png"
                 alt="Shirley Jiang"
-                className="h-[320px] w-full object-cover"
+                className="h-[320px] w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
               />
-              <div className="px-6 py-6">
-                <h2 className="text-[20px] font-bold text-[#0a0a0a]">
+              <div className="flex flex-1 flex-col p-[32px]">
+                <h3 className="text-[20px] font-bold tracking-tight text-[#0a0a0a]">
                   Shirley Jiang
-                </h2>
+                </h3>
                 <p className="mt-1 text-[15px] font-medium text-[#1B54F8]">
                   President
                 </p>
                 <a
                   href="mailto:shirley@riveoai.com"
-                  className="mt-4 block text-[15px] text-[#1B54F8] hover:underline"
+                  className="mt-4 block text-[15px] text-[#1B54F8] transition-colors hover:text-[#1445d4] hover:underline"
                 >
                   shirley@riveoai.com
                 </a>
-                <p className="mt-3 text-[14px] leading-[1.6] text-[#777]">
-                  8+ years in software at SpaceX, Fireworks AI, and other leading tech companies
+                <p className="mt-auto pt-4 text-[14px] leading-[1.6] text-[#888]">
+                  8+ years in software at SpaceX, Fireworks AI, and other
+                  leading tech companies
                 </p>
               </div>
             </div>
 
             {/* Jason */}
-            <div className="overflow-hidden rounded-[16px] border border-[#e5e5e5] bg-white">
+            <div className="group flex flex-col overflow-hidden rounded-[16px] border border-[#e4e2de] bg-white transition-all duration-300 hover:shadow-[0_8px_30px_-12px_rgba(0,0,0,0.12)]">
               <Image
                 src="/images/jason.png"
                 alt="Jason Jiang"
                 width={400}
                 height={400}
-                className="h-[320px] w-full object-cover"
+                className="h-[320px] w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
               />
-              <div className="px-6 py-6">
-                <h2 className="text-[20px] font-bold text-[#0a0a0a]">
+              <div className="flex flex-1 flex-col p-[32px]">
+                <h3 className="text-[20px] font-bold tracking-tight text-[#0a0a0a]">
                   Jason Jiang
-                </h2>
+                </h3>
                 <p className="mt-1 text-[15px] font-medium text-[#1B54F8]">
                   Engineer
                 </p>
                 <a
                   href="mailto:jason@riveoai.com"
-                  className="mt-4 block text-[15px] text-[#1B54F8] hover:underline"
+                  className="mt-4 block text-[15px] text-[#1B54F8] transition-colors hover:text-[#1445d4] hover:underline"
                 >
                   jason@riveoai.com
                 </a>
-                <p className="mt-3 text-[14px] leading-[1.6] text-[#777]">
+                <p className="mt-auto pt-4 text-[14px] leading-[1.6] text-[#888]">
                   B.S. Computer Science, UC Santa Barbara
                 </p>
               </div>
             </div>
 
             {/* Glenn */}
-            <div className="overflow-hidden rounded-[16px] border border-[#e5e5e5] bg-white">
+            <div className="group flex flex-col overflow-hidden rounded-[16px] border border-[#e4e2de] bg-white transition-all duration-300 hover:shadow-[0_8px_30px_-12px_rgba(0,0,0,0.12)] sm:col-start-1 sm:col-end-3 sm:mx-auto sm:max-w-[calc(50%-10px)] lg:col-auto lg:mx-0 lg:max-w-none">
               <div className="h-[320px] w-full bg-[#e4e2de]" />
-              <div className="px-6 py-6">
-                <h2 className="text-[20px] font-bold text-[#0a0a0a]">
+              <div className="flex flex-1 flex-col p-[32px]">
+                <h3 className="text-[20px] font-bold tracking-tight text-[#0a0a0a]">
                   Glenn Platkin
-                </h2>
+                </h3>
                 <p className="mt-1 text-[15px] font-medium text-[#1B54F8]">
                   Advisor
                 </p>
                 <a
                   href="mailto:glenn@riveoai.com"
-                  className="mt-4 block text-[15px] text-[#1B54F8] hover:underline"
+                  className="mt-4 block text-[15px] text-[#1B54F8] transition-colors hover:text-[#1445d4] hover:underline"
                 >
                   glenn@riveoai.com
                 </a>
-                <p className="mt-3 text-[14px] leading-[1.6] text-[#777]">
-                  Software executive with 30+ years of experience partnering with Fortune 500 companies
+                <p className="mt-auto pt-4 text-[14px] leading-[1.6] text-[#888]">
+                  Software executive with 30+ years of experience partnering
+                  with Fortune 500 companies
                 </p>
               </div>
             </div>
