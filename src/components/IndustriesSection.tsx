@@ -4,7 +4,7 @@ const industries = [
   "Plumbing, HVAC & Cleaning",
   "Automotive",
   "Hotels & Restaurants",
-  "Gyms",
+  "Insurance Brokers",
   "Trucking & Logistics",
   "Nonprofits",
   "Property Owners",
