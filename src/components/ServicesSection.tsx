@@ -9,13 +9,13 @@ const services = [
     icon: "/images/icons/ai-development.svg",
     title: "AI Development & Integration",
     description:
-      "We connect AI to the tools you already use, so the manual work happens automatically. Think invoices that process themselves, client emails that get sorted and flagged, and reports that generate overnight. No new software to learn.",
+      "AI plugs into the tools you already use. Invoices process themselves, client emails get sorted and flagged, reports generate overnight. No new software to learn. Your team keeps working the way they always have, just faster.",
   },
   {
     icon: "/images/icons/ai-agents.svg",
     title: "AI Agents Development",
     description:
-      "We build AI agents that actually think and act on your behalf. They follow up with leads the moment they come in, answer client questions 24/7, and handle multi-step tasks your team used to do manually. Like hiring a new employee that works around the clock.",
+      "AI agents that follow up with leads the moment they come in, answer client questions 24/7, and handle the multi-step tasks your team used to do manually. Like adding a tireless teammate who never drops the ball.",
   },
 ];
 

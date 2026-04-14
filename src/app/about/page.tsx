@@ -66,9 +66,9 @@ export default function AboutPage() {
                   Our Story
                 </h2>
                 <p className="mt-4 text-[16px] leading-[1.8] text-white/80">
-                  After years at leading AI companies, I saw a gap. The most
-                  powerful tools were locked inside big tech. I started Riveo to
-                  bring that same AI to small businesses so they can scale
+                  After working at SpaceX and leading AI companies, I saw a gap. The most
+                  powerful AI tools were locked inside big tech. I started Riveo to
+                  bring that same technology to small businesses so they can scale
                   faster and work smarter.
                 </p>
                 <p className="mt-4 text-[14px] font-semibold tracking-wide text-[#7da1ff]">

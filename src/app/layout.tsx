@@ -9,9 +9,9 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "AI Development Company | Riveo AI",
+  title: "AI for Small Business | Riveo AI",
   description:
-    "AI development company enabling innovation and rapid development. We build cutting-edge AI solutions for startups and enterprises.",
+    "Riveo AI helps small businesses understand and implement AI. Custom solutions built into the tools your team already uses.",
 };
 
 export default function RootLayout({

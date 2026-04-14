@@ -19,22 +19,17 @@ export default function HeroSection() {
       <div className="relative mx-auto flex max-w-[1280px] flex-col items-center px-6 pt-[100px] pb-[80px] md:flex-row md:items-center md:px-10 md:pt-[140px] md:pb-[100px]">
         {/* Left Column */}
         <div className="flex w-full flex-col items-center md:w-[55%] md:items-start">
-          <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-[12px] tracking-[2px] uppercase text-white/60 backdrop-blur-sm">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#1B54F8] animate-pulse" />
-            AI-powered solutions
-          </span>
-
           <h1
             className="max-w-[580px] text-center text-[36px] font-normal leading-[1.2] text-white md:text-left md:text-[56px]"
             style={{
               fontFamily: 'Georgia, Times, "Times New Roman", serif',
             }}
           >
-            AI development company
+            Let us take the mystery out of AI
           </h1>
 
           <p className="mt-6 max-w-[520px] text-center text-[22px] font-bold leading-[1.7] text-white md:text-left md:text-[26px]">
-            We build cutting-edge <span className="text-[#7da1ff]">AI solutions for small businesses</span>. 10x your team&apos;s productivity today.
+            We help small businesses understand and use <span className="text-[#7da1ff]">AI</span>. No jargon, no complexity.
           </p>
 
           <button
