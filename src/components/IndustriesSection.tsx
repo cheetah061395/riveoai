@@ -3,13 +3,13 @@ const industries = [
   "Medical & Dental Practices",
   "Plumbing, HVAC & Cleaning",
   "Automotive",
-  "Daycares & Tutoring Centers",
   "Hotels & Restaurants",
   "Gyms",
-  "Trucking & Moving Companies",
+  "Trucking & Logistics",
   "Nonprofits",
-  "Local Shops & Boutiques",
-  "Senior Living & Home Care",
+  "Property Owners",
+  "Law Firms",
+  "Senior Living",
   "And more...",
 ];
 
