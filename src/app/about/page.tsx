@@ -128,8 +128,8 @@ export default function AboutPage() {
                 shirley@riveoai.com
               </a>
               <p className="mt-3 text-[13px] leading-[1.6] text-[#333]">
-                8+ years in software at SpaceX, Fireworks AI, and other
-                leading tech companies
+                8+ years in software at SpaceX and Fireworks AI, helping
+                teams apply AI in real-world workflows
               </p>
             </div>
 
