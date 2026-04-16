@@ -97,13 +97,13 @@ export default function AboutPage() {
                   fontFamily: 'Georgia, Times, "Times New Roman", serif',
                 }}
               >
-                Team
+                Leadership
               </h2>
             </div>
           </div>
-          <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-0 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-0 sm:grid-cols-2">
             {/* Shirley */}
-            <div className="border-b border-[#e4e2de] px-2 py-8 sm:border-b-0 sm:border-r sm:px-8 lg:border-r">
+            <div className="border-b border-[#e4e2de] px-2 py-8 sm:border-b-0 sm:border-r sm:px-8">
               <div className="flex items-center gap-2">
                 <h3 className="text-[20px] font-bold tracking-tight text-[#0a0a0a]">
                   Shirley Jiang
@@ -130,25 +130,6 @@ export default function AboutPage() {
               <p className="mt-3 text-[13px] leading-[1.6] text-[#333]">
                 8+ years in software at SpaceX and Fireworks AI, helping
                 teams apply AI in real-world workflows
-              </p>
-            </div>
-
-            {/* Jason */}
-            <div className="border-b border-[#e4e2de] px-2 py-8 sm:border-b-0 sm:px-8 lg:border-r">
-              <h3 className="text-[20px] font-bold tracking-tight text-[#0a0a0a]">
-                Jason Jiang
-              </h3>
-              <p className="mt-1 text-[14px] font-medium text-[#888]">
-                Engineer
-              </p>
-              <a
-                href="mailto:jason@riveoai.com"
-                className="mt-3 block text-[14px] text-[#0a0a0a] transition-colors hover:text-[#1B54F8]"
-              >
-                jason@riveoai.com
-              </a>
-              <p className="mt-3 text-[13px] leading-[1.6] text-[#333]">
-                B.S. Computer Science, UC Santa Barbara
               </p>
             </div>
 
