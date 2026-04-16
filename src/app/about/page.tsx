@@ -90,7 +90,7 @@ export default function AboutPage() {
         {/* Team */}
         <section className="w-full bg-[#f6f5f3] px-6 py-[60px] md:px-[40px] md:py-[100px]">
           <div className="mx-auto max-w-[1280px]">
-            <div className="mb-[48px] flex flex-col items-center text-center">
+            <div className="mb-[32px] flex flex-col items-center text-center">
               <h2
                 className="text-[26px] font-bold tracking-tight text-[#0a0a0a] md:text-[48px]"
                 style={{
@@ -101,11 +101,11 @@ export default function AboutPage() {
               </h2>
             </div>
           </div>
-          <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-0 sm:grid-cols-2">
+          <div className="mx-auto grid max-w-[720px] grid-cols-1 gap-0 sm:grid-cols-2">
             {/* Shirley */}
-            <div className="border-b border-[#e4e2de] px-2 py-8 sm:border-b-0 sm:border-r sm:px-8">
+            <div className="border-b border-[#e4e2de] px-2 py-6 sm:border-b-0 sm:border-r sm:px-6">
               <div className="flex items-center gap-2">
-                <h3 className="text-[20px] font-bold tracking-tight text-[#0a0a0a]">
+                <h3 className="text-[18px] font-bold tracking-tight text-[#0a0a0a]">
                   Shirley Jiang
                 </h3>
                 <a
@@ -115,28 +115,28 @@ export default function AboutPage() {
                   className="text-[#bbb] transition-colors hover:text-[#0077b5]"
                   aria-label="LinkedIn"
                 >
-                  <svg className="h-[14px] w-[14px]" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                  <svg className="h-[13px] w-[13px]" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                 </a>
               </div>
-              <p className="mt-1 text-[14px] font-medium text-[#888]">
+              <p className="mt-0.5 text-[13px] font-medium text-[#888]">
                 CEO
               </p>
               <a
                 href="mailto:shirley@riveoai.com"
-                className="mt-3 block text-[14px] text-[#0a0a0a] transition-colors hover:text-[#1B54F8]"
+                className="mt-2 block text-[13px] text-[#0a0a0a] transition-colors hover:text-[#1B54F8]"
               >
                 shirley@riveoai.com
               </a>
-              <p className="mt-3 text-[13px] leading-[1.6] text-[#333]">
+              <p className="mt-2 text-[13px] leading-[1.5] text-[#555]">
                 8+ years in software at SpaceX and Fireworks AI, helping
                 teams apply AI in real-world workflows
               </p>
             </div>
 
             {/* Glenn */}
-            <div className="px-2 py-8 sm:px-8">
+            <div className="px-2 py-6 sm:px-6">
               <div className="flex items-center gap-2">
-                <h3 className="text-[20px] font-bold tracking-tight text-[#0a0a0a]">
+                <h3 className="text-[18px] font-bold tracking-tight text-[#0a0a0a]">
                   Glenn Platkin
                 </h3>
                 <a
@@ -146,19 +146,19 @@ export default function AboutPage() {
                   className="text-[#bbb] transition-colors hover:text-[#0077b5]"
                   aria-label="LinkedIn"
                 >
-                  <svg className="h-[14px] w-[14px]" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                  <svg className="h-[13px] w-[13px]" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                 </a>
               </div>
-              <p className="mt-1 text-[14px] font-medium text-[#888]">
+              <p className="mt-0.5 text-[13px] font-medium text-[#888]">
                 Advisor
               </p>
               <a
                 href="mailto:glenn@riveoai.com"
-                className="mt-3 block text-[14px] text-[#0a0a0a] transition-colors hover:text-[#1B54F8]"
+                className="mt-2 block text-[13px] text-[#0a0a0a] transition-colors hover:text-[#1B54F8]"
               >
                 glenn@riveoai.com
               </a>
-              <p className="mt-3 text-[13px] leading-[1.6] text-[#333]">
+              <p className="mt-2 text-[13px] leading-[1.5] text-[#555]">
                 Software executive with 30+ years of experience partnering
                 with Fortune 500 companies
               </p>
