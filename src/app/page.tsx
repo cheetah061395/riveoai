@@ -1,10 +1,12 @@
 import HeroSection from "@/components/HeroSection";
+import PerfectMatchSection from "@/components/PerfectMatchSection";
 
-/**
- * Homepage. Says one thing: what Riveo is and who it's for, then points at the
- * product page. How it works lives on /how-it-works; why it exists on /about.
- * Resist adding sections here.
- */
+/** Homepage: title screen with email capture, then the one-viewport pitch. */
 export default function Home() {
-  return <HeroSection />;
+  return (
+    <>
+      <HeroSection />
+      <PerfectMatchSection />
+    </>
+  );
 }

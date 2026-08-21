@@ -18,8 +18,8 @@ export function FounderNote() {
         <div>
           <Placeholder
             label="Portrait — founder, natural light"
-            tone="warm"
-            className="aspect-[4/5] w-full"
+            tone="light"
+            className="aspect-[4/5] w-full border border-ink/10"
             labelAlign="bottom"
           />
         </div>

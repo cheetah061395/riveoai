@@ -11,9 +11,9 @@ type Tone = "warm" | "deep" | "light";
 
 const TONES: Record<Tone, string> = {
   // Soft cosmetic-adjacent gradients — no imagery, no implied product.
-  warm: "linear-gradient(135deg,#e3be1ecc,#e3be1e8c 45%,#a8880d73)",
-  deep: "linear-gradient(135deg,#0e3550f2,#1b5b85cc 45%,#7ba39199)",
-  light: "linear-gradient(135deg,#eef4f1,#bcd6c8 55%,#a9c4b4cc)",
+  warm: "linear-gradient(135deg,#e3be1e40,#a9c4b440 45%,#1b5b8526)",
+  deep: "linear-gradient(135deg,#0e2a3bf2,#1b5b85cc 45%,#a9c4b499)",
+  light: "linear-gradient(135deg,#faf8f5,#f0ece6 55%,#e6e0d8)",
 };
 
 export function Placeholder({
@@ -45,7 +45,7 @@ export function Placeholder({
         className="absolute inset-0 opacity-[0.18]"
         style={{
           backgroundImage:
-            "linear-gradient(to right,#0e3550 1px,transparent 1px),linear-gradient(to bottom,#0e3550 1px,transparent 1px)",
+            "linear-gradient(to right,#1f2622 1px,transparent 1px),linear-gradient(to bottom,#1f2622 1px,transparent 1px)",
           backgroundSize: "48px 48px",
         }}
       />
@@ -56,7 +56,7 @@ export function Placeholder({
       >
         <span
           className={`text-center font-sans text-[11px] uppercase tracking-[0.25em] ${
-            tone === "deep" ? "text-shell/70" : "text-ink/45"
+            tone === "deep" ? "text-paper/70" : "text-label/60"
           } ${labelClassName}`}
         >
           {label}

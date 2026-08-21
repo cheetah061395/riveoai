@@ -1,74 +1,86 @@
-import { Placeholder } from "@/components/Placeholder";
-import { SignupForm } from "@/components/SignupForm";
+"use client";
+
+import { useState, type FormEvent } from "react";
 
 /**
- * The homepage's whole argument: what Riveo is and who it's for, one CTA
- * onward, one way to stay in touch. Everything else lives on /how-it-works
- * and /about — deliberately not here.
+ * Section 1 — centred title screen with email capture.
  *
- * The background is a labelled Placeholder until the hero film exists. To go
- * live, replace it with the `<video>` below — the scrim and layering above it
- * already assume a dark, full-bleed layer:
- *
- *   <video src="/hero/loop.mp4" poster="/hero/poster.jpg"
- *          autoPlay loop muted playsInline preload="auto"
- *          className="absolute inset-0 h-full w-full object-cover object-[center_12%]" />
+ * `status` is wired for the full submit lifecycle, but there is no endpoint
+ * yet: the handoff lists the newsletter/CRM destination as TBD. Until one
+ * exists, submit resolves straight to "success" without sending anything.
+ * Point POST_URL at the real list and remove the short-circuit.
  */
+const POST_URL: string | null = null;
+
+type Status = "idle" | "submitting" | "success" | "error";
+
 export function HeroSection() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<Status>("idle");
+
+  async function onSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (!POST_URL) {
+      setStatus("success");
+      return;
+    }
+    setStatus("submitting");
+    try {
+      const res = await fetch(POST_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      setStatus(res.ok ? "success" : "error");
+    } catch {
+      setStatus("error");
+    }
+  }
+
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-ink">
-      <div className="absolute inset-0">
-        <Placeholder
-          label="Hero film — close on a face in changing light, device in frame"
-          tone="deep"
-          className="absolute inset-0 h-full w-full"
-          labelAlign="bottom"
-          labelClassName="max-w-md"
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(180deg, var(--video-overlay-top), var(--video-overlay-mid) 50%, var(--video-overlay-bottom))",
-          }}
-        />
-      </div>
+    <section
+      data-screen-label="Hero"
+      className="bg-paper px-10 pt-24 pb-26 text-center"
+    >
+      <h1 className="m-0 font-display text-[64px] font-light leading-[1.12] tracking-[0.06em] text-ink max-md:text-[40px] max-sm:text-[32px]">
+        Your Perfect Foundation Shade
+      </h1>
 
-      <div className="relative z-10 flex flex-col items-center px-6 py-28">
-        <p className="mb-4 animate-fade-up font-serif text-lg italic text-shell/75 motion-reduce:animate-none">
-          Shade matching, solved
+      {status === "success" ? (
+        <p className="mx-auto mt-10 max-w-[360px] font-display text-[15px] font-light tracking-[0.04em] text-ink">
+          Thanks &mdash; you&rsquo;re on the list.
         </p>
-
-        <h1 className="max-w-4xl animate-fade-up text-center font-display text-3xl font-normal uppercase leading-[1.2] tracking-display motion-reduce:animate-none sm:text-4xl lg:text-5xl">
-          <span className="text-shell">Stop guessing your </span>
-          <span className="text-accent-gradient">shade.</span>
-        </h1>
-
-        {/* What it is, and who it's for — the one thing this page has to land. */}
-        <p className="mt-7 max-w-xl animate-fade-up text-center font-sans text-base leading-relaxed text-shell/80 motion-reduce:animate-none">
-          Riveo is a handheld scanner that reads your skin&rsquo;s real
-          undertone and depth, then matches it to foundation, concealer and
-          blush across 400+ brands. For anyone who has bought the wrong shade
-          more than once.
-        </p>
-
-        <a
-          href="/how-it-works"
-          className="mt-9 animate-fade-up rounded-none bg-primary px-10 py-4 font-display text-xs uppercase tracking-display text-ink transition-colors duration-200 hover:bg-primary-deep motion-reduce:animate-none"
+      ) : (
+        <form
+          onSubmit={onSubmit}
+          className="mx-auto mt-10 flex max-w-[360px] flex-col items-stretch gap-3.5"
         >
-          See how it works
-        </a>
-
-        <div className="mt-14 flex w-full animate-fade-up justify-center motion-reduce:animate-none">
-          <div className="flex w-full max-w-[460px] flex-col items-center">
-            <SignupForm />
-            <p className="mt-3 font-sans text-xs font-light tracking-wide text-shell/70">
-              Early access, launch pricing, and shade tips worth reading.
+          <label htmlFor="hero-email" className="sr-only">
+            Email
+          </label>
+          <input
+            id="hero-email"
+            type="email"
+            required
+            placeholder="Email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            className="rounded-md border border-ink/22 bg-surface px-[18px] py-[15px] text-center font-display text-[15px] font-light tracking-[0.04em] text-ink outline-none focus:border-secondary"
+          />
+          <button
+            type="submit"
+            disabled={status === "submitting"}
+            className="cursor-pointer rounded-md bg-button px-6 py-[17px] font-display text-sm font-normal uppercase tracking-[0.14em] text-paper transition-colors hover:bg-secondary disabled:opacity-60"
+          >
+            {status === "submitting" ? "Sending…" : "Get Early Access"}
+          </button>
+          {status === "error" ? (
+            <p role="alert" className="font-sans text-[13px] text-label">
+              Something went wrong. Please try again.
             </p>
-          </div>
-        </div>
-      </div>
+          ) : null}
+        </form>
+      )}
     </section>
   );
 }

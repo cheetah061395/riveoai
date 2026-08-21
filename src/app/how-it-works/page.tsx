@@ -19,9 +19,9 @@ export default function HowItWorksPage() {
   return (
     <>
       <PageHeader
-        eyebrow="The method"
-        title="Three steps, one honest answer"
-        intro="Picking a shade by eye is a guess dressed up as a decision. Riveo measures instead — undertone and depth read separately, under lighting it controls."
+        eyebrow="[Section label]"
+        title="[Page heading — the method, in one line]"
+        intro="[Intro — one or two sentences setting up why the method is different from the default way of doing this. Keep it short; the sections below carry the detail.]"
       />
       <HowItWorksStage />
       <DifferenceSection />

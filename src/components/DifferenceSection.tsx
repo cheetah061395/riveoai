@@ -75,11 +75,11 @@ export function DifferenceSection() {
             ref={eyebrow.ref}
             className={`${eyebrow.className} font-sans text-base md:text-lg text-ink/60 mb-3`}
           >
-            See the difference.
+            [Section label]
           </p>
           <div ref={heading.ref} className={heading.className}>
             <h2 className="font-display uppercase tracking-display font-normal leading-[1.2] text-2xl md:text-[1.75rem] lg:text-[2.25rem] mb-6 text-ink">
-              How far off is your shade?
+              [Heading — the comparison this section proves]
             </h2>
           </div>
         </div>
@@ -88,16 +88,16 @@ export function DifferenceSection() {
           <div>
             <p className={DRAG_HINT}>
               <span className="text-accent-deep font-semibold">
-                Drag to compare.
+                [Lead-in]
               </span>{" "}
-              The same face, in a guessed shade and a matched one.
+              [Caption — what the two sides of the slider show]
             </p>
             <CompareSlider
-              baseAlt="Photo — foundation picked by eye"
-              baseLabel="Guessed"
-              overlayAlt="Photo — the shade Riveo matched"
-              overlayLabel="Matched"
-              ariaLabel="Compare a guessed foundation shade with a Riveo-matched shade"
+              baseAlt="[Photo — the before side]"
+              baseLabel="[Before]"
+              overlayAlt="[Photo — the after side]"
+              overlayLabel="[After]"
+              ariaLabel="[Accessible name — compare X with Y]"
             />
           </div>
 
@@ -105,23 +105,21 @@ export function DifferenceSection() {
             <p
               className="font-serif text-lg italic mb-3 text-secondary"
             >
-              Foundation
+              [Eyebrow — the product or dimension]
             </p>
-            <h3 className={HEADING}>Half a tone off is still off.</h3>
+            <h3 className={HEADING}>[Heading — the claim this comparison supports]</h3>
             <p className={BODY}>
-              Picking by eye under store lighting gets you close, and close is
-              what leaves a line at your jaw. Riveo reads undertone and depth
-              separately, so the shade that goes on your face is the one that
-              disappears into your neck — in daylight, not just in the aisle.
+              [Body — two to four sentences explaining what the
+              comparison shows and why it matters. Concrete beats abstract.]
             </p>
             <div className="flex flex-wrap gap-2 justify-center lg:justify-start mt-6">
-              <span className={CHIP}>Undertone</span>
-              <span className={CHIP}>Depth</span>
-              <span className={CHIP}>Oxidation</span>
-              <span className={CHIP}>Finish</span>
+              <span className={CHIP}>[Tag 1]</span>
+              <span className={CHIP}>[Tag 2]</span>
+              <span className={CHIP}>[Tag 3]</span>
+              <span className={CHIP}>[Tag 4]</span>
             </div>
             <a className={LINK} href="/how-it-works#undertone">
-              How undertone matching works →
+              [Text link — deeper explainer]
             </a>
           </div>
         </div>
@@ -138,37 +136,35 @@ export function DifferenceSection() {
           <div className="order-2 lg:order-1">
             <p className={DRAG_HINT}>
               <span className="text-accent-deep font-semibold">
-                Drag to compare.
+                [Lead-in]
               </span>{" "}
-              The same under-eye, two concealers.
+              [Caption — what the two sides of the slider show]
             </p>
             <CompareSlider
-              baseAlt="Photo — concealer chosen by guesswork"
-              baseLabel="Guessed"
-              overlayAlt="Photo — the concealer Riveo matched"
-              overlayLabel="Matched"
-              ariaLabel="Compare a guessed concealer with a Riveo-matched concealer"
+              baseAlt="[Photo — the before side]"
+              baseLabel="[Before]"
+              overlayAlt="[Photo — the after side]"
+              overlayLabel="[After]"
+              ariaLabel="[Accessible name — compare X with Y]"
             />
           </div>
 
           <div className="order-1 lg:order-2 text-center lg:text-left">
             <p className="font-serif text-lg italic mb-3 text-secondary">
-              Concealer
+              [Eyebrow — the product or dimension]
             </p>
-            <h3 className={HEADING}>The right correction, not more coverage.</h3>
+            <h3 className={HEADING}>[Heading — the claim this comparison supports]</h3>
             <p className={BODY}>
-              Most under-eye mistakes are colour, not thickness — a shade too
-              cool goes grey, a shade too light goes ashy. Riveo reads the
-              actual hue you are covering and picks the correction for it, so
-              one thin layer does what three used to.
+              [Body — two to four sentences explaining what the
+              comparison shows and why it matters. Concrete beats abstract.]
             </p>
             <div className="flex flex-wrap gap-2 justify-center lg:justify-start mt-6">
-              <span className={CHIP}>Colour correction</span>
-              <span className={CHIP}>Coverage</span>
-              <span className={CHIP}>Brightness</span>
+              <span className={CHIP}>[Tag 1]</span>
+              <span className={CHIP}>[Tag 2]</span>
+              <span className={CHIP}>[Tag 3]</span>
             </div>
             <a className={LINK} href="/how-it-works">
-              How colour correction works →
+              [Text link — deeper explainer]
             </a>
           </div>
         </div>
@@ -178,17 +174,16 @@ export function DifferenceSection() {
           className={`${closing.className} text-center mt-24 max-w-2xl mx-auto`}
         >
           <h3 className="font-display uppercase tracking-display font-normal leading-[1.2] text-2xl md:text-[1.75rem] text-ink mb-5">
-            So, what is <span className="text-accent-gradient">your</span> actual
-            shade?
+            [Closing question or claim]
           </h3>
           <p className="mb-7 font-sans text-sm text-ink/70">
-            The $149 launch price ends September 30 &mdash; then $199.
+            [Supporting line — price, timing or reassurance]
           </p>
           <a
             className="inline-block rounded-none bg-primary px-10 py-4 font-display text-xs font-normal uppercase tracking-display text-ink transition-colors duration-200 hover:bg-primary-deep"
             href="/buy"
           >
-            Pre-order Riveo
+            [Primary CTA]
           </a>
         </div>
       </div>

@@ -1,40 +1,42 @@
 import type { Metadata } from "next";
-import { Inter, Jost, Libre_Caslon_Text } from "next/font/google";
+import { Archivo, Instrument_Serif, Karla } from "next/font/google";
 import "./globals.css";
 
-import SiteNav from "@/components/SiteNav";
+import AnnouncementBar from "@/components/AnnouncementBar";
+import SiteHeader from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 
-// Free stand-ins for the reference site's type system. Its display face
-// (WestmanAtelierSansUC) is bespoke to that brand and Caslon 540 is licensed,
-// so neither is used here — these match the register, not the files.
-const jost = Jost({
-  variable: "--font-display-sans",
+// Type stack per the homepage handoff: Archivo for display, Instrument Serif
+// for the wordmark, Karla for body and UI.
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin"],
+  weight: ["200", "300", "400"],
   display: "swap",
 });
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const caslon = Libre_Caslon_Text({
-  variable: "--font-accent-serif",
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument-serif",
   subsets: ["latin"],
   weight: ["400"],
-  style: ["italic", "normal"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
+const karla = Karla({
+  variable: "--font-karla",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
   title: {
-    default: "Riveo — Stop guessing your shade",
+    default: "Riveo — Your Perfect Foundation Shade",
     template: "%s — Riveo",
   },
   description:
-    "Riveo scans your face, reads your undertone and depth, and matches you to foundation, concealer and blush that actually fit. Stop guessing your shade.",
+    "Scan your face with a lab grade device and we match you with your foundation shade.",
   icons: {
     icon: [{ url: "/favicon.ico", sizes: "16x16", type: "image/x-icon" }],
   },
@@ -48,10 +50,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${jost.variable} ${inter.variable} ${caslon.variable}`}
+      className={`${archivo.variable} ${instrumentSerif.variable} ${karla.variable}`}
     >
-      <body className="bg-shell text-ink font-sans antialiased">
-        <SiteNav />
+      <body className="bg-paper font-sans text-ink antialiased">
+        <AnnouncementBar />
+        <SiteHeader />
         <main>{children}</main>
         <SiteFooter />
       </body>
