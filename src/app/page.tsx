@@ -1,24 +1,10 @@
-import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 
-import ServicesSection from "@/components/ServicesSection";
-import IndustriesSection from "@/components/IndustriesSection";
-import EngagementModelsSection from "@/components/EngagementModelsSection";
-import GetStartedSection from "@/components/GetStartedSection";
-import Footer from "@/components/Footer";
-
+/**
+ * Homepage. Says one thing: what Riveo is and who it's for, then points at the
+ * product page. How it works lives on /how-it-works; why it exists on /about.
+ * Resist adding sections here.
+ */
 export default function Home() {
-  return (
-    <>
-      <Header />
-      <main className="pt-[68px]">
-        <HeroSection />
-
-        <IndustriesSection />
-        <ServicesSection />
-        <EngagementModelsSection />
-      </main>
-      <Footer />
-    </>
-  );
+  return <HeroSection />;
 }

@@ -1,126 +1,76 @@
-"use client";
+import { Placeholder } from "@/components/Placeholder";
+import { SignupForm } from "@/components/SignupForm";
 
-import { useState } from "react";
-import { ConsultationModal } from "./ConsultationModal";
-
-export default function HeroSection() {
-  const [showForm, setShowForm] = useState(false);
-
+/**
+ * The homepage's whole argument: what Riveo is and who it's for, one CTA
+ * onward, one way to stay in touch. Everything else lives on /how-it-works
+ * and /about — deliberately not here.
+ *
+ * The background is a labelled Placeholder until the hero film exists. To go
+ * live, replace it with the `<video>` below — the scrim and layering above it
+ * already assume a dark, full-bleed layer:
+ *
+ *   <video src="/hero/loop.mp4" poster="/hero/poster.jpg"
+ *          autoPlay loop muted playsInline preload="auto"
+ *          className="absolute inset-0 h-full w-full object-cover object-[center_12%]" />
+ */
+export function HeroSection() {
   return (
-    <section className="relative w-full overflow-hidden bg-[#060e1a]">
-      {/* Noise grain overlay */}
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
-        }}
-      />
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-ink">
+      <div className="absolute inset-0">
+        <Placeholder
+          label="Hero film — close on a face in changing light, device in frame"
+          tone="deep"
+          className="absolute inset-0 h-full w-full"
+          labelAlign="bottom"
+          labelClassName="max-w-md"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, var(--video-overlay-top), var(--video-overlay-mid) 50%, var(--video-overlay-bottom))",
+          }}
+        />
+      </div>
 
-      <div className="relative mx-auto flex max-w-[1280px] flex-col items-center px-6 pt-[100px] pb-[80px] md:flex-row md:items-center md:px-10 md:pt-[140px] md:pb-[100px]">
-        {/* Left Column */}
-        <div className="flex w-full flex-col items-center md:w-[55%] md:items-start">
-          <h1
-            className="max-w-[580px] text-center text-[36px] font-normal leading-[1.2] text-white md:text-left md:text-[56px]"
-            style={{
-              fontFamily: 'Georgia, Times, "Times New Roman", serif',
-            }}
-          >
-            Let us take the mystery out of AI
-          </h1>
+      <div className="relative z-10 flex flex-col items-center px-6 py-28">
+        <p className="mb-4 animate-fade-up font-serif text-lg italic text-shell/75 motion-reduce:animate-none">
+          Shade matching, solved
+        </p>
 
-          <p className="mt-6 max-w-[520px] text-center text-[22px] font-bold leading-[1.7] text-white md:text-left md:text-[26px]">
-            We help small businesses understand and use <span className="text-[#7da1ff]">AI</span>. No jargon, no complexity.
-          </p>
+        <h1 className="max-w-4xl animate-fade-up text-center font-display text-3xl font-normal uppercase leading-[1.2] tracking-display motion-reduce:animate-none sm:text-4xl lg:text-5xl">
+          <span className="text-shell">Stop guessing your </span>
+          <span className="text-accent-gradient">shade.</span>
+        </h1>
 
-          <button
-            type="button"
-            onClick={() => setShowForm(true)}
-            className="group mt-10 flex cursor-pointer items-center gap-3 rounded-full bg-[#1B54F8] px-8 py-4 text-[15px] font-semibold tracking-wide text-white transition-all duration-300 hover:bg-[#2460ff] hover:shadow-[0_0_40px_-8px_rgba(27,84,248,0.5)]"
-          >
-            Get in touch
-          </button>
-        </div>
+        {/* What it is, and who it's for — the one thing this page has to land. */}
+        <p className="mt-7 max-w-xl animate-fade-up text-center font-sans text-base leading-relaxed text-shell/80 motion-reduce:animate-none">
+          Riveo is a handheld scanner that reads your skin&rsquo;s real
+          undertone and depth, then matches it to foundation, concealer and
+          blush across 400+ brands. For anyone who has bought the wrong shade
+          more than once.
+        </p>
 
-        {/* Right Column — Orbital rings */}
-        <div className="relative mt-12 flex w-full items-center justify-center md:mt-0 md:w-[45%]">
-          <div className="relative h-[280px] w-[280px] md:h-[520px] md:w-[520px]">
-            {/* Outer ring */}
-            <div
-              className="absolute inset-0 rounded-full border border-white/[0.06]"
-              style={{ animation: "spin 40s linear infinite" }}
-            >
-              <div className="absolute -top-[5px] left-1/2 h-[10px] w-[10px] -translate-x-1/2 rounded-full bg-[#1B54F8] shadow-[0_0_12px_rgba(27,84,248,0.6)]" />
-              <div className="absolute -bottom-[4px] left-1/3 h-[8px] w-[8px] -translate-x-1/2 rounded-full bg-white/20" />
-            </div>
+        <a
+          href="/how-it-works"
+          className="mt-9 animate-fade-up rounded-none bg-primary px-10 py-4 font-display text-xs uppercase tracking-display text-ink transition-colors duration-200 hover:bg-primary-deep motion-reduce:animate-none"
+        >
+          See how it works
+        </a>
 
-            {/* Middle ring */}
-            <div
-              className="absolute inset-[44px] md:inset-[80px] rounded-full border border-white/[0.08]"
-              style={{ animation: "spin 25s linear infinite reverse" }}
-            >
-              <div className="absolute -right-[4px] top-1/2 h-[8px] w-[8px] -translate-y-1/2 rounded-full bg-[#7da1ff] shadow-[0_0_10px_rgba(125,161,255,0.5)]" />
-              <div className="absolute -left-[3px] top-1/3 h-[6px] w-[6px] -translate-y-1/2 rounded-full bg-white/15" />
-            </div>
-
-            {/* Inner ring */}
-            <div
-              className="absolute inset-[88px] md:inset-[160px] rounded-full border border-white/[0.10]"
-              style={{ animation: "spin 15s linear infinite" }}
-            >
-              <div className="absolute -top-[3px] right-1/4 h-[6px] w-[6px] -translate-x-1/2 rounded-full bg-[#1B54F8]/70 shadow-[0_0_8px_rgba(27,84,248,0.4)]" />
-            </div>
-
-            {/* Center glow */}
-            <div className="absolute inset-[112px] md:inset-[210px] rounded-full bg-[#1B54F8]/[0.04] backdrop-blur-sm" />
-            <div className="absolute inset-[116px] md:inset-[215px] flex items-center justify-center rounded-full border border-white/[0.08]">
-              <span className="text-[18px] md:text-[28px] font-bold tracking-[6px] uppercase text-white/40">
-                AI
-              </span>
-            </div>
-
-            {/* Use case bubbles — evenly spaced around circle, hidden on mobile */}
-            <div className="hidden md:block">
-              {/* 12 o'clock */}
-              <div className="absolute -top-[16px] left-1/2 -translate-x-1/2 rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-2 text-[12px] tracking-wide text-white/50 backdrop-blur-sm">
-                Customer Support
-              </div>
-              {/* 2 o'clock */}
-              <div className="absolute top-[60px] -right-[60px] rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-2 text-[12px] tracking-wide text-white/50 backdrop-blur-sm">
-                Lead Follow-up
-              </div>
-              {/* 4 o'clock */}
-              <div className="absolute top-[250px] -right-[80px] rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-2 text-[12px] tracking-wide text-white/50 backdrop-blur-sm">
-                Document Processing
-              </div>
-              {/* 8 o'clock */}
-              <div className="absolute top-[250px] -left-[90px] rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-2 text-[12px] tracking-wide text-white/50 backdrop-blur-sm">
-                Voicemail &amp; Email Triage
-              </div>
-              {/* 9 o'clock — below voicemail */}
-              <div className="absolute top-[390px] -left-[40px] rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-2 text-[12px] tracking-wide text-white/50 backdrop-blur-sm">
-                Quoting &amp; Proposals
-              </div>
-              {/* 10 o'clock */}
-              <div className="absolute top-[60px] -left-[70px] rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-2 text-[12px] tracking-wide text-white/50 backdrop-blur-sm">
-                Workflow Automation
-              </div>
-            </div>
-
+        <div className="mt-14 flex w-full animate-fade-up justify-center motion-reduce:animate-none">
+          <div className="flex w-full max-w-[460px] flex-col items-center">
+            <SignupForm />
+            <p className="mt-3 font-sans text-xs font-light tracking-wide text-shell/70">
+              Early access, launch pricing, and shade tips worth reading.
+            </p>
           </div>
         </div>
       </div>
-
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-[120px] bg-gradient-to-t from-[#f6f5f3] to-transparent" />
-
-      <ConsultationModal open={showForm} onClose={() => setShowForm(false)} />
-
-      <style jsx>{`
-        @keyframes spin {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-      `}</style>
     </section>
   );
 }
+
+export default HeroSection;
