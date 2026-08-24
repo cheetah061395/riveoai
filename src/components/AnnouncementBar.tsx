@@ -21,9 +21,23 @@ const BRANDS = [
   "Lancôme",
   "Maybelline",
   "L'Oréal",
+  "NARS",
+  "Fenty Beauty",
+  "Charlotte Tilbury",
+  "Hourglass",
+  "Make Up For Ever",
+  "Bobbi Brown",
+  "MAC",
+  "Too Faced",
+  "bareMinerals",
+  "Urban Decay",
+  "Stila",
+  "KVD Beauty",
+  "Danessa Myricks",
+  "Sephora Collection",
 ];
 
-const REPEAT = 4;
+const REPEAT = 2;
 
 function Half() {
   return (

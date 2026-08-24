@@ -35,10 +35,10 @@
 
   --tracking-display: 0.05em;
 
-  /* Duration is tied to how far one half travels. Each half repeats the brand
-     list 4x (~3200px), so 32s would run ~3.4x the handoff's intended pace,
-     44s pulls it back. Change this if REPEAT in AnnouncementBar changes. */
-  --animate-marquee: marquee 44s linear infinite;
+  /* Duration is tied to how far one half travels. Each half repeats the
+     brand list twice (~5200px), so the duration has to scale with it to hold
+     a steady ~72px/s. Recompute if BRANDS or REPEAT changes. */
+  --animate-marquee: marquee 73s linear infinite;
   --animate-stack-enter: stack-enter 0.65s cubic-bezier(0.4, 0, 0.2, 1) both;
   --animate-stack-enter-rev: stack-enter-rev 0.65s cubic-bezier(0.4, 0, 0.2, 1) both;
   --animate-stack-exit: stack-exit 0.65s cubic-bezier(0.4, 0, 0.2, 1) both;

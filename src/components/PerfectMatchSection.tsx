@@ -30,8 +30,8 @@ const PANELS = [
     caption: "Scan your face at home",
   },
   {
-    src: "/home/apply-foundation.jpg",
-    alt: "A woman blending foundation into her cheek with her fingertips.",
+    src: "/home/shade-swatch.jpg",
+    alt: "A woman pointing at a foundation swatch drawn along her cheek.",
     caption: "Get your perfect match",
   },
   {
@@ -42,7 +42,7 @@ const PANELS = [
 ];
 
 const CAPTION =
-  "shrink-0 px-6 pt-3 pb-4 text-center font-sans text-[17px] leading-[1.5] text-ink";
+  "shrink-0 px-6 pt-4 pb-5 text-center font-sans text-[21px] font-semibold leading-[1.4] text-ink";
 
 export function PerfectMatchSection() {
   return (
@@ -53,7 +53,7 @@ export function PerfectMatchSection() {
     >
       <div className="flex flex-[0_0_auto] flex-col items-center gap-5 px-10 pt-[4.5vh] pb-[2.5vh] text-center">
         <h2 className="m-0 font-display text-[clamp(28px,3.4vw,46px)] font-light leading-[1.2] tracking-[0.05em] text-ink">
-          Perfect Match Every Time
+          Find your shade match across 100+ brands
         </h2>
       </div>
 
