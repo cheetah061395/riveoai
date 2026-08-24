@@ -35,8 +35,8 @@ const PANELS = [
     caption: "Get your perfect match",
   },
   {
-    src: "/home/product-right.jpg",
-    alt: "A woman with a smooth, evenly matched complexion against a warm neutral background.",
+    src: "/home/shade-range.jpg",
+    alt: "A foundation bottle and dropper surrounded by swatches in many shades.",
     caption: "Matched across 100+ brands",
   },
 ];
