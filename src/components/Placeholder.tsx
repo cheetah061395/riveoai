@@ -4,13 +4,13 @@
  * Every image slot on the page renders one of these instead of a borrowed
  * photo. Each carries a visible label so nothing here can be mistaken for a
  * finished asset, and the slots keep the exact aspect ratios the real photos
- * will need — drop a real `<picture>` in and the layout won't move.
+ * will need, drop a real `<picture>` in and the layout won't move.
  */
 
 type Tone = "warm" | "deep" | "light";
 
 const TONES: Record<Tone, string> = {
-  // Soft cosmetic-adjacent gradients — no imagery, no implied product.
+  // Soft cosmetic-adjacent gradients, no imagery, no implied product.
   warm: "linear-gradient(135deg,#e3be1e40,#a9c4b440 45%,#1b5b8526)",
   deep: "linear-gradient(135deg,#0e2a3bf2,#1b5b85cc 45%,#a9c4b499)",
   light: "linear-gradient(135deg,#faf8f5,#f0ece6 55%,#e6e0d8)",

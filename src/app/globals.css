@@ -9,8 +9,8 @@
 @theme {
   /* Brand palette (project level). */
   --color-primary: #a9c4b4;        /* Turquoise Green */
-  --color-secondary: #1b5b85;      /* Antwarp Blue — links, marquee, hovers */
-  --color-accent: #e3be1e;         /* Apricot Yellow — badge dot, link hover */
+  --color-secondary: #1b5b85;      /* Antwarp Blue: links, marquee, hovers */
+  --color-accent: #e3be1e;         /* Apricot Yellow: badge dot, link hover */
 
   /* Applied values from the homepage handoff. */
   --color-surface: #ffffff;        /* section 2 background, inputs */
@@ -36,7 +36,7 @@
   --tracking-display: 0.05em;
 
   /* Duration is tied to how far one half travels. Each half repeats the brand
-     list 4x (~3200px), so 32s would run ~3.4x the handoff's intended pace —
+     list 4x (~3200px), so 32s would run ~3.4x the handoff's intended pace,
      44s pulls it back. Change this if REPEAT in AnnouncementBar changes. */
   --animate-marquee: marquee 44s linear infinite;
   --animate-stack-enter: stack-enter 0.65s cubic-bezier(0.4, 0, 0.2, 1) both;

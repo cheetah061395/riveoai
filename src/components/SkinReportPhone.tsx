@@ -1,7 +1,7 @@
 /**
  * The Riveo skin report, rendered inside a phone frame.
  *
- * Built at a fixed 402×874 base — the same size as the design reference — so
+ * Built at a fixed 402×874 base, the same size as the design reference, so
  * every value below is the literal spec figure. Scale it at the call site with
  * a CSS `transform`, which keeps the type crisp at any size rather than
  * shipping a screenshot.
@@ -31,35 +31,13 @@ const MATCHES = [
   },
 ];
 
-const ATTRIBUTES: { label: string; value: string; wide?: boolean }[] = [
-  { label: "Depth", value: "light to light-medium" },
-  { label: "Undertone", value: "neutral-olive, leaning slightly cool" },
-  {
-    label: "Surface tone",
-    value: "some pink/red in the cheeks and center of the face",
-  },
-  { label: "Quality", value: "muted, not highly saturated" },
-  {
-    label: "Visual color",
-    value:
-      "beige-yellow with a subtle gray/green cast rather than peach or golden",
-    wide: true,
-  },
-  {
-    label: "Watch for",
-    value:
-      "many “warm” shades may turn orange, while many “cool” shades may turn too pink",
-    wide: true,
-  },
-  {
-    label: "Best family",
-    value: "muted neutral, neutral-olive, or cool-olive",
-    wide: true,
-  },
-];
+/** Short, but it should teach something. The headline names the shade; this
+ *  explains why that undertone behaves the way it does and what to do about
+ *  it at the counter. */
+const SUMMARY =
+  "Your undertone is neutral-olive with a slightly cool lean. Avoid peach and golden bases, because an olive undertone pulls them orange on the skin. Stay in muted neutral and olive families instead.";
 
 const LABEL = "font-sans text-[11px] font-semibold uppercase tracking-[0.16em] text-secondary";
-const VALUE = "mt-1 font-sans text-[13px] leading-[1.5] text-ink";
 
 export function SkinReportPhone() {
   return (
@@ -84,8 +62,12 @@ export function SkinReportPhone() {
             Light to light-medium, muted neutral-olive.
           </h2>
 
+          <p className="mt-3 font-sans text-[13px] leading-[1.55] text-ink/75">
+            {SUMMARY}
+          </p>
+
           <div
-            className="mt-4 rounded-[3px] border border-ink/20 bg-white px-[18px] pt-[18px] pb-5"
+            className="mt-5 rounded-[3px] border border-ink/20 bg-white px-[18px] pt-[18px] pb-5"
             style={{ boxShadow: "0 6px 20px rgba(31,38,34,0.07)" }}
           >
             <p className="font-display text-[17px] font-medium uppercase tracking-[0.1em] text-ink">
@@ -121,17 +103,6 @@ export function SkinReportPhone() {
             </ul>
           </div>
 
-          <dl className="mt-5 grid grid-cols-2 gap-x-5 gap-y-4">
-            {ATTRIBUTES.map((attribute) => (
-              <div
-                key={attribute.label}
-                className={attribute.wide ? "col-span-2" : undefined}
-              >
-                <dt className={LABEL}>{attribute.label}</dt>
-                <dd className={VALUE}>{attribute.value}</dd>
-              </div>
-            ))}
-          </dl>
         </div>
 
         <div className="px-[18px] pb-6">

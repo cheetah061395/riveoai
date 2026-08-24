@@ -81,7 +81,7 @@ export function StorySection() {
                 className="font-sans text-lg md:text-xl text-ink/70 flex items-baseline gap-3"
               >
                 <span aria-hidden="true" className="text-accent/70 text-sm">
-                  —
+                  &middot;
                 </span>
                 {question}
               </li>

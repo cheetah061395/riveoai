@@ -11,7 +11,7 @@ import { SkinReportPhone } from "@/components/SkinReportPhone";
  * carrying on past the boundary. The in-app wordmark stays in view. It runs off
  * the bottom rather than being shrunk to fit.
  *
- * Heading only — no eyebrow, body copy or CTA.
+ * Heading only, no eyebrow, body copy or CTA.
  */
 export function SkinReportSection() {
   return (
@@ -27,8 +27,13 @@ export function SkinReportSection() {
           </h2>
         </div>
 
-        <div className="relative h-[540px] md:h-[620px]">
-          <div className="absolute -top-3 left-1/2 origin-top -translate-x-1/2 scale-[0.88] md:left-0 md:translate-x-0">
+        {/* Cropped just below the matches card. The phone is 874px tall but
+            its content ends at 464px, so the rest is empty screen, at this
+            scale the card bottom lands near 490px, and the container stops
+            there. Scaled past 1 to bring the report copy up to a size that
+            reads at a glance. */}
+        <div className="relative h-[480px] md:h-[520px]">
+          <div className="absolute -top-3 left-1/2 origin-top -translate-x-1/2 scale-[1.08] md:left-0 md:translate-x-0">
             <SkinReportPhone />
           </div>
         </div>

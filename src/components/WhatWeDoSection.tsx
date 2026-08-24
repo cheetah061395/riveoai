@@ -1,7 +1,7 @@
 import { Placeholder } from "@/components/Placeholder";
 
 /**
- * Homepage section one: what you do — structure only.
+ * Homepage section one: what you do, structure only.
  *
  * Every string is a bracketed note describing the slot's job. Three columns is
  * the shape; if you only have two real capabilities, cut one rather than
@@ -11,21 +11,21 @@ import { Placeholder } from "@/components/Placeholder";
 const PILLARS = [
   {
     index: "01",
-    title: "[Capability 1 — the core mechanic]",
+    title: "[Capability 1: the core mechanic]",
     body: "[One or two sentences. Concrete over abstract: say what it does, not what it enables.]",
-    photo: "[Photo — capability 1 in use]",
+    photo: "[Photo: capability 1 in use]",
   },
   {
     index: "02",
-    title: "[Capability 2 — the differentiator]",
+    title: "[Capability 2: the differentiator]",
     body: "[The thing a competitor or the status quo cannot claim. This is the one that earns the section.]",
-    photo: "[Photo — capability 2 in use]",
+    photo: "[Photo: capability 2 in use]",
   },
   {
     index: "03",
-    title: "[Capability 3 — the payoff]",
+    title: "[Capability 3: the payoff]",
     body: "[What the user ends up holding, seeing or knowing. Close the loop the first two opened.]",
-    photo: "[Photo — capability 3 in use]",
+    photo: "[Photo: capability 3 in use]",
   },
 ];
 
@@ -41,10 +41,10 @@ export function WhatWeDoSection() {
             [Section label]
           </p>
           <h2 className="font-display text-2xl font-normal uppercase leading-[1.2] tracking-display text-ink md:text-[1.75rem]">
-            [Heading &mdash; what you do, in plain words]
+            [Heading: what you do, in plain words]
           </h2>
           <p className="mx-auto mt-6 max-w-xl font-sans text-base leading-relaxed text-ink/70">
-            [Intro &mdash; one or two sentences framing the three points below.
+            [Intro: one or two sentences framing the three points below.
             Say what changes for the user, not how the technology works.]
           </p>
         </div>

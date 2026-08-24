@@ -3,7 +3,7 @@
 import { useState, type FormEvent } from "react";
 
 /**
- * Section 1 — centred title screen with email capture.
+ * Section 1, centred title screen with email capture.
  *
  * `status` is wired for the full submit lifecycle, but there is no endpoint
  * yet: the handoff lists the newsletter/CRM destination as TBD. Until one
@@ -47,13 +47,13 @@ export function HeroSection() {
       </h1>
 
       <p className="mx-auto mt-7 max-w-[46ch] font-sans text-[21px] leading-[1.6] text-muted [text-wrap:pretty] max-md:text-[18px]">
-        Scan your face with our lab grade device and we match you with your
-        foundation shade. It&rsquo;s that easy.
+        Scan your face at home with our lab grade device and we match you with
+        your foundation shade. It&rsquo;s that easy.
       </p>
 
       {status === "success" ? (
         <p className="mx-auto mt-10 max-w-[360px] font-display text-[15px] font-light tracking-[0.04em] text-ink">
-          Thanks &mdash; you&rsquo;re on the list.
+          Thanks, you&rsquo;re on the list.
         </p>
       ) : (
         <form

@@ -1,13 +1,13 @@
 import Image from "next/image";
 
 /**
- * Section 2 — a centred heading over a three-panel image row, each captioned.
+ * Section 2, a centred heading over a three-panel image row, each captioned.
  *
  * `object-cover` with the crop window pushed down (`FOCUS`). The panels are
  * shorter than the sources' 1536×2752 ratio, so ~34% of each photo is cut.
  * Anchoring to the top spends all of that on the bottom and lands the cut on
  * the jaw, which reads as a severed chin. Dropping the window trades headroom
- * — hair the composition does not need — for the neck and shoulders that let a
+ *, hair the composition does not need, for the neck and shoulders that let a
  * face sit on something.
  *
  * An earlier attempt inset the photos and continued their backdrop in CSS, to
@@ -17,7 +17,7 @@ import Image from "next/image";
  * the join lands on the hairline. Evening out the scale needs the photos
  * re-exported with real margin around the subject.
  *
- * PANEL_ASPECT is the dial for tile height — larger is shorter.
+ * PANEL_ASPECT is the dial for tile height, larger is shorter.
  * FOCUS is the vertical crop window: 0% pins the top, 100% pins the bottom.
  */
 const PANEL_ASPECT = 0.85;

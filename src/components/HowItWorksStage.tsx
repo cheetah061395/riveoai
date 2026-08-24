@@ -231,7 +231,7 @@ export function HowItWorksStage() {
     <section
       ref={sectionRef}
       id="how-it-works"
-      aria-label="How Riveo works — scan, match, shop"
+      aria-label="How Riveo works: scan, match, shop"
       className="relative bg-shell"
       style={{ height: `${120 * CARDS.length + 100}vh` }}
     >

@@ -79,7 +79,7 @@ export function DifferenceSection() {
           </p>
           <div ref={heading.ref} className={heading.className}>
             <h2 className="font-display uppercase tracking-display font-normal leading-[1.2] text-2xl md:text-[1.75rem] lg:text-[2.25rem] mb-6 text-ink">
-              [Heading — the comparison this section proves]
+              [Heading: the comparison this section proves]
             </h2>
           </div>
         </div>
@@ -90,14 +90,14 @@ export function DifferenceSection() {
               <span className="text-accent-deep font-semibold">
                 [Lead-in]
               </span>{" "}
-              [Caption — what the two sides of the slider show]
+              [Caption: what the two sides of the slider show]
             </p>
             <CompareSlider
-              baseAlt="[Photo — the before side]"
+              baseAlt="[Photo: the before side]"
               baseLabel="[Before]"
-              overlayAlt="[Photo — the after side]"
+              overlayAlt="[Photo: the after side]"
               overlayLabel="[After]"
-              ariaLabel="[Accessible name — compare X with Y]"
+              ariaLabel="[Accessible name: compare X with Y]"
             />
           </div>
 
@@ -105,11 +105,11 @@ export function DifferenceSection() {
             <p
               className="font-serif text-lg italic mb-3 text-secondary"
             >
-              [Eyebrow — the product or dimension]
+              [Eyebrow: the product or dimension]
             </p>
-            <h3 className={HEADING}>[Heading — the claim this comparison supports]</h3>
+            <h3 className={HEADING}>[Heading: the claim this comparison supports]</h3>
             <p className={BODY}>
-              [Body — two to four sentences explaining what the
+              [Body: two to four sentences explaining what the
               comparison shows and why it matters. Concrete beats abstract.]
             </p>
             <div className="flex flex-wrap gap-2 justify-center lg:justify-start mt-6">
@@ -119,7 +119,7 @@ export function DifferenceSection() {
               <span className={CHIP}>[Tag 4]</span>
             </div>
             <a className={LINK} href="/how-it-works#undertone">
-              [Text link — deeper explainer]
+              [Text link: deeper explainer]
             </a>
           </div>
         </div>
@@ -138,24 +138,24 @@ export function DifferenceSection() {
               <span className="text-accent-deep font-semibold">
                 [Lead-in]
               </span>{" "}
-              [Caption — what the two sides of the slider show]
+              [Caption: what the two sides of the slider show]
             </p>
             <CompareSlider
-              baseAlt="[Photo — the before side]"
+              baseAlt="[Photo: the before side]"
               baseLabel="[Before]"
-              overlayAlt="[Photo — the after side]"
+              overlayAlt="[Photo: the after side]"
               overlayLabel="[After]"
-              ariaLabel="[Accessible name — compare X with Y]"
+              ariaLabel="[Accessible name: compare X with Y]"
             />
           </div>
 
           <div className="order-1 lg:order-2 text-center lg:text-left">
             <p className="font-serif text-lg italic mb-3 text-secondary">
-              [Eyebrow — the product or dimension]
+              [Eyebrow: the product or dimension]
             </p>
-            <h3 className={HEADING}>[Heading — the claim this comparison supports]</h3>
+            <h3 className={HEADING}>[Heading: the claim this comparison supports]</h3>
             <p className={BODY}>
-              [Body — two to four sentences explaining what the
+              [Body: two to four sentences explaining what the
               comparison shows and why it matters. Concrete beats abstract.]
             </p>
             <div className="flex flex-wrap gap-2 justify-center lg:justify-start mt-6">
@@ -164,7 +164,7 @@ export function DifferenceSection() {
               <span className={CHIP}>[Tag 3]</span>
             </div>
             <a className={LINK} href="/how-it-works">
-              [Text link — deeper explainer]
+              [Text link: deeper explainer]
             </a>
           </div>
         </div>
@@ -177,7 +177,7 @@ export function DifferenceSection() {
             [Closing question or claim]
           </h3>
           <p className="mb-7 font-sans text-sm text-ink/70">
-            [Supporting line — price, timing or reassurance]
+            [Supporting line: price, timing or reassurance]
           </p>
           <a
             className="inline-block rounded-none bg-primary px-10 py-4 font-display text-xs font-normal uppercase tracking-display text-ink transition-colors duration-200 hover:bg-primary-deep"

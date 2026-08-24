@@ -8,7 +8,7 @@ import { NewsletterSection } from "@/components/NewsletterSection";
 export const metadata: Metadata = {
   title: "How It Works",
   description:
-    "Scan your face, get your shades, buy it once. How Riveo reads undertone and depth separately — and why that beats picking by eye.",
+    "Scan your face, get your shades, buy it once. How Riveo reads undertone and depth separately, and why that beats picking by eye.",
 };
 
 /**
@@ -20,8 +20,8 @@ export default function HowItWorksPage() {
     <>
       <PageHeader
         eyebrow="[Section label]"
-        title="[Page heading — the method, in one line]"
-        intro="[Intro — one or two sentences setting up why the method is different from the default way of doing this. Keep it short; the sections below carry the detail.]"
+        title="[Page heading: the method, in one line]"
+        intro="[Intro: one or two sentences setting up why the method is different from the default way of doing this. Keep it short; the sections below carry the detail.]"
       />
       <HowItWorksStage />
       <DifferenceSection />

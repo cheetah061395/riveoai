@@ -8,7 +8,7 @@
  * The catch: that only reads as seamless if a single half is at least as wide
  * as the viewport. One pass of the brand list is roughly 940px, so on anything
  * wider a gap opens at the end of the loop. Repeating the list inside each half
- * fixes it — REPEAT × ~940px is the widest viewport this stays seamless on.
+ * fixes it, REPEAT × ~940px is the widest viewport this stays seamless on.
  *
  * The visual row is aria-hidden and the names are exposed once to assistive
  * tech instead, so they aren't announced eight times over.

@@ -5,7 +5,7 @@ import type { FormEvent } from "react";
 import { cn } from "@/lib/utils";
 
 /**
- * The white pill signup form — Name + Email + "Join".
+ * The white pill signup form, Name + Email + "Join".
  * Shared by HeroSection and NewsletterSection, so the markup is self-contained
  * and the only prop is a class hook for the wrapper.
  *

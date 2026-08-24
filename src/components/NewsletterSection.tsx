@@ -1,6 +1,6 @@
 import { SignupForm } from "@/components/SignupForm";
 
-/** "The Riveo Letter" — centred newsletter block reusing the shared pill form. */
+/** "The Riveo Letter": centred newsletter block reusing the shared pill form. */
 export function NewsletterSection() {
   return (
     <section aria-label="Newsletter signup" className="bg-shell px-6 py-14 md:py-16">
@@ -9,7 +9,7 @@ export function NewsletterSection() {
           [Section label]
         </p>
         <p className="mb-4 font-sans text-sm text-ink/80">
-          [Value proposition — what subscribers actually receive]
+          [Value proposition: what subscribers actually receive]
         </p>
 
         <SignupForm />
