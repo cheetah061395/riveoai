@@ -43,8 +43,13 @@ export function HeroSection() {
       className="bg-paper px-10 pt-24 pb-26 text-center"
     >
       <h1 className="m-0 font-display text-[64px] font-light leading-[1.12] tracking-[0.06em] text-ink max-md:text-[40px] max-sm:text-[32px]">
-        Your Perfect Foundation Shade
+        Find your perfect foundation shade
       </h1>
+
+      <p className="mx-auto mt-7 max-w-[46ch] font-sans text-[21px] leading-[1.6] text-muted [text-wrap:pretty] max-md:text-[18px]">
+        Scan your face with our lab grade device and we match you with your
+        foundation shade. It&rsquo;s that easy.
+      </p>
 
       {status === "success" ? (
         <p className="mx-auto mt-10 max-w-[360px] font-display text-[15px] font-light tracking-[0.04em] text-ink">

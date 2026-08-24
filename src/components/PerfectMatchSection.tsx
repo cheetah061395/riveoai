@@ -1,76 +1,82 @@
 import Image from "next/image";
 
-import { SkinReportPhone } from "@/components/SkinReportPhone";
-
 /**
- * Section 2 — one viewport tall: centred text block over a three-panel row.
+ * Section 2 — a centred heading over a three-panel image row, each captioned.
  *
- * The `min-h-0` on the row and `min-w-0` on each cell are load-bearing. Without
- * them the media's intrinsic size pushes the grid tracks past the viewport and
- * the section stops fitting in 100vh.
+ * `object-cover` with the crop window pushed down (`FOCUS`). The panels are
+ * shorter than the sources' 1536×2752 ratio, so ~34% of each photo is cut.
+ * Anchoring to the top spends all of that on the bottom and lands the cut on
+ * the jaw, which reads as a severed chin. Dropping the window trades headroom
+ * — hair the composition does not need — for the neck and shoulders that let a
+ * face sit on something.
  *
- * All three cells are equal width and every image crops to fill (`cover`), so
- * the panels read as one row of matching pictures. This overrides the handoff,
- * which sized the centre track at 1.05fr and used `contain`; with 1536x2752
- * masters there is enough resolution that `cover` no longer costs sharpness.
+ * An earlier attempt inset the photos and continued their backdrop in CSS, to
+ * even out the different shooting distances. It does not work: sampling the
+ * edge pixels shows the subjects run to the frame on the lower half of every
+ * file (skin at the margins, not backdrop), so there is nothing to extend and
+ * the join lands on the hairline. Evening out the scale needs the photos
+ * re-exported with real margin around the subject.
+ *
+ * PANEL_ASPECT is the dial for tile height — larger is shorter.
+ * FOCUS is the vertical crop window: 0% pins the top, 100% pins the bottom.
  */
+const PANEL_ASPECT = 0.85;
+const FOCUS = "50% 32%";
+
+const PANELS = [
+  {
+    src: "/home/product-left.jpg",
+    alt: "A woman holding the Riveo device to her cheek.",
+    caption: "Scan your face at home",
+  },
+  {
+    src: "/home/apply-foundation.jpg",
+    alt: "A woman blending foundation into her cheek with her fingertips.",
+    caption: "Get your perfect match",
+  },
+  {
+    src: "/home/product-right.jpg",
+    alt: "A woman with a smooth, evenly matched complexion against a warm neutral background.",
+    caption: "Matched across 100+ brands",
+  },
+];
+
+const CAPTION =
+  "shrink-0 px-6 pt-3 pb-4 text-center font-sans text-[17px] leading-[1.5] text-ink";
+
 export function PerfectMatchSection() {
   return (
     <section
       id="how"
       data-screen-label="Perfect Match"
-      className="flex h-screen flex-col border-t border-ink/12 bg-surface"
+      className="flex min-h-screen flex-col border-t border-ink/12 bg-surface"
     >
-      <div className="flex flex-[0_0_auto] flex-col items-center gap-5 px-10 pt-[6vh] pb-[3vh] text-center">
+      <div className="flex flex-[0_0_auto] flex-col items-center gap-5 px-10 pt-[4.5vh] pb-[2.5vh] text-center">
         <h2 className="m-0 font-display text-[clamp(28px,3.4vw,46px)] font-light leading-[1.2] tracking-[0.05em] text-ink">
           Perfect Match Every Time
         </h2>
-        <p className="m-0 max-w-[54ch] font-sans text-base leading-[1.7] text-muted [text-wrap:pretty]">
-          Scan your face with a lab grade device and we match you with your
-          foundation shade. It&rsquo;s that easy.
-        </p>
       </div>
 
-      <div className="grid min-h-0 flex-[1_1_auto] grid-cols-3 bg-surface">
-        <div className="relative min-w-0 overflow-hidden">
-          <Image
-            src="/home/product-left.jpg"
-            alt="A woman holding the Riveo device to her cheek."
-            fill
-            sizes="(max-width: 900px) 100vw, 33vw"
-            className="object-cover"
-            priority
-          />
-          <span className="pointer-events-none absolute top-[18px] left-[18px] text-xs text-label">
-            New
-          </span>
-        </div>
-
-        <div className="relative min-w-0 overflow-hidden">
-          <Image
-            src="/home/campaign-portrait.jpg"
-            alt="A woman applying foundation with a brush, holding the bottle."
-            fill
-            sizes="(max-width: 900px) 100vw, 34vw"
-            className="object-cover"
-            priority
-          />
-        </div>
-
-        {/* Third panel is the report itself, rendered live rather than as a
-            screenshot so it stays sharp and editable. Zoomed past the cell and
-            anchored to the top so the shade profile and matches card are
-            legible — the phone deliberately bleeds off the bottom edge, the
-            same way the two photographs crop. */}
-        <div className="relative min-w-0 overflow-hidden bg-[#EFEDE9]">
-          {/* Near-native scale so the report copy stays legible. Top-aligned
-              and cropped at the bottom rather than shrunk to fit — the phone is
-              meant to run off the edge. Kept just under the narrowest cell
-              width so the left and right edges never clip the text. */}
-          <div className="absolute top-0 left-1/2 origin-top -translate-x-1/2 scale-[0.94]">
-            <SkinReportPhone />
+      <div className="grid grid-cols-3 bg-surface">
+        {PANELS.map((panel, i) => (
+          <div key={panel.src} className="flex min-w-0 flex-col">
+            <div
+              className="relative overflow-hidden"
+              style={{ aspectRatio: PANEL_ASPECT }}
+            >
+              <Image
+                src={panel.src}
+                alt={panel.alt}
+                fill
+                sizes="(max-width: 900px) 100vw, 33vw"
+                className="object-cover"
+                style={{ objectPosition: FOCUS }}
+                priority={i < 2}
+              />
+            </div>
+            <p className={CAPTION}>{panel.caption}</p>
           </div>
-        </div>
+        ))}
       </div>
     </section>
   );

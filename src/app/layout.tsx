@@ -32,11 +32,11 @@ const karla = Karla({
 
 export const metadata: Metadata = {
   title: {
-    default: "Riveo — Your Perfect Foundation Shade",
+    default: "Riveo — Find your perfect foundation shade",
     template: "%s — Riveo",
   },
   description:
-    "Scan your face with a lab grade device and we match you with your foundation shade.",
+    "Scan your face with our lab grade device and we match you with your foundation shade.",
   icons: {
     icon: [{ url: "/favicon.ico", sizes: "16x16", type: "image/x-icon" }],
   },

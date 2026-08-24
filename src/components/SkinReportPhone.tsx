@@ -5,6 +5,9 @@
  * every value below is the literal spec figure. Scale it at the call site with
  * a CSS `transform`, which keeps the type crisp at any size rather than
  * shipping a screenshot.
+ *
+ * No status bar: the clock and radio icons ate ~55px of height without saying
+ * anything about the product, so the report starts at the top of the screen.
  */
 
 const MATCHES = [
@@ -58,45 +61,6 @@ const ATTRIBUTES: { label: string; value: string; wide?: boolean }[] = [
 const LABEL = "font-sans text-[11px] font-semibold uppercase tracking-[0.16em] text-secondary";
 const VALUE = "mt-1 font-sans text-[13px] leading-[1.5] text-ink";
 
-function StatusBar() {
-  return (
-    <div className="flex items-center justify-between px-7 pt-3.5">
-      <span className="font-sans text-[17px] font-semibold text-black">
-        9:41
-      </span>
-      <div className="h-[37px] w-[125px] rounded-full bg-black" />
-      <div className="flex items-center gap-1.5 text-black" aria-hidden="true">
-        <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor">
-          <rect x="0" y="8" width="3" height="4" rx="1" />
-          <rect x="5" y="5.5" width="3" height="6.5" rx="1" />
-          <rect x="10" y="3" width="3" height="9" rx="1" />
-          <rect x="15" y="0" width="3" height="12" rx="1" />
-        </svg>
-        <svg width="16" height="12" viewBox="0 0 16 12" fill="currentColor">
-          <path d="M8 10.5 6 8.4a2.8 2.8 0 0 1 4 0zM8 6.2a5 5 0 0 0-3.6 1.5L2.9 6.2a7.2 7.2 0 0 1 10.2 0l-1.5 1.5A5 5 0 0 0 8 6.2M8 2.1a9.2 9.2 0 0 0-6.5 2.7L0 3.3a11.3 11.3 0 0 1 16 0l-1.5 1.5A9.2 9.2 0 0 0 8 2.1" />
-        </svg>
-        <svg width="25" height="12" viewBox="0 0 25 12" fill="none">
-          <rect
-            x="0.5"
-            y="0.5"
-            width="21"
-            height="11"
-            rx="3"
-            stroke="currentColor"
-            strokeOpacity="0.4"
-          />
-          <rect x="2" y="2" width="18" height="8" rx="1.6" fill="currentColor" />
-          <path
-            d="M23 4v4a2 2 0 0 0 0-4"
-            fill="currentColor"
-            fillOpacity="0.4"
-          />
-        </svg>
-      </div>
-    </div>
-  );
-}
-
 export function SkinReportPhone() {
   return (
     <div
@@ -107,9 +71,7 @@ export function SkinReportPhone() {
       }}
     >
       <div className="flex h-full flex-col bg-paper">
-        <StatusBar />
-
-        <div className="px-[18px] pt-4">
+        <div className="px-[18px] pt-7">
           <p className="font-serif text-[17px] uppercase tracking-[0.22em] text-ink">
             Riveo
           </p>
@@ -122,22 +84,31 @@ export function SkinReportPhone() {
             Light to light-medium, muted neutral-olive.
           </h2>
 
-          <div className="mt-4 rounded-[3px] border border-ink/14 bg-white px-[18px] py-5">
-            <p className="font-display text-sm font-medium uppercase tracking-[0.12em] text-ink">
+          <div
+            className="mt-4 rounded-[3px] border border-ink/20 bg-white px-[18px] pt-[18px] pb-5"
+            style={{ boxShadow: "0 6px 20px rgba(31,38,34,0.07)" }}
+          >
+            <p className="font-display text-[17px] font-medium uppercase tracking-[0.1em] text-ink">
               Your Shade Matches
             </p>
-            <ul className="mt-3.5 space-y-3">
+            <div className="mt-3 h-px bg-ink/12" />
+            <ul className="mt-4 space-y-3.5">
               {MATCHES.map((match) => (
-                <li key={match.index} className="flex items-start gap-3">
+                <li
+                  key={match.index}
+                  className={`flex items-start gap-3 ${
+                    match.top ? "-mx-2 rounded-[2px] bg-accent/12 px-2 py-2" : ""
+                  }`}
+                >
                   <span className="mt-0.5 font-display text-[10px] tracking-[0.08em] text-[#9AA29C]">
                     {match.index}
                   </span>
                   <span
                     aria-hidden="true"
-                    className="mt-px h-[22px] w-[22px] shrink-0 rounded-full"
+                    className="mt-px h-[26px] w-[26px] shrink-0 rounded-full ring-1 ring-ink/10"
                     style={{ background: match.swatch }}
                   />
-                  <span className="flex-1 font-sans text-[13px] leading-[1.4] text-ink">
+                  <span className={`flex-1 font-sans text-[14px] leading-[1.4] text-ink ${match.top ? "font-semibold" : ""}`}>
                     {match.name}
                   </span>
                   {match.top ? (

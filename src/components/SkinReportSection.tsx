@@ -1,0 +1,40 @@
+import { SkinReportPhone } from "@/components/SkinReportPhone";
+
+/**
+ * Homepage section three: the skin report, given its own room.
+ *
+ * Sits on the brand blue so the section reads as distinct from the white and
+ * warm-neutral blocks above it, and the cream phone lifts off it.
+ *
+ * The phone is nudged just above the section's top edge: enough to shave the
+ * flat top of the frame while leaving the corner curves visible, so it reads as
+ * carrying on past the boundary. The in-app wordmark stays in view. It runs off
+ * the bottom rather than being shrunk to fit.
+ *
+ * Heading only — no eyebrow, body copy or CTA.
+ */
+export function SkinReportSection() {
+  return (
+    <section
+      aria-label="Your skin report"
+      className="overflow-hidden bg-secondary"
+    >
+      <div className="mx-auto grid max-w-6xl items-center gap-10 px-10 md:grid-cols-2 md:gap-16">
+        <div className="pt-20 pb-4 md:py-28">
+          <h2 className="font-display text-[clamp(26px,2.8vw,38px)] font-light leading-[1.2] tracking-[0.05em] text-paper">
+            Understand your skin tone. Never guess your foundation shade
+            again.
+          </h2>
+        </div>
+
+        <div className="relative h-[540px] md:h-[620px]">
+          <div className="absolute -top-3 left-1/2 origin-top -translate-x-1/2 scale-[0.88] md:left-0 md:translate-x-0">
+            <SkinReportPhone />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default SkinReportSection;
