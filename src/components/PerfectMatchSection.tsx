@@ -58,7 +58,7 @@ const PANELS: {
 ];
 
 const CAPTION =
-  "shrink-0 px-6 pt-6 pb-10 md:pb-7 text-center font-display text-[14px] font-normal uppercase leading-[1.5] tracking-[0.16em] text-ink";
+  "shrink-0 px-6 pt-4 pb-14 md:pt-6 md:pb-7 text-center font-display text-[14px] font-normal uppercase leading-[1.5] tracking-[0.16em] text-ink";
 
 export function PerfectMatchSection() {
   return (
@@ -75,7 +75,10 @@ export function PerfectMatchSection() {
 
       <div className="grid grid-cols-1 bg-surface md:grid-cols-3">
         {PANELS.map((panel, i) => (
-          <div key={panel.caption} className="flex min-w-0 flex-col">
+          <div
+            key={panel.caption}
+            className="flex min-w-0 flex-col border-t border-ink/10 first:border-t-0 md:border-t-0"
+          >
             <div className={`relative overflow-hidden ${PANEL_ASPECT}`}>
               {panel.phone ? (
                 <SkinReportPanel />
