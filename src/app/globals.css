@@ -1,130 +1,32 @@
 @import "tailwindcss";
 
 /* ---------------------------------------------------------------------------
-   Design tokens for Riveo. Palette is 白緑 / 納戸色 / 鬱金色 from a Japanese
-   traditional colour reference; the stack animation system came from a site
-   used as visual inspiration.
+   Design tokens for Riveo. Only what the homepage actually renders lives here.
 --------------------------------------------------------------------------- */
 
 @theme {
-  /* Brand palette (project level). */
-  --color-primary: #a9c4b4;        /* Turquoise Green */
-  --color-secondary: #1b5b85;      /* Antwarp Blue: links, marquee, hovers */
-  --color-accent: #e3be1e;         /* Apricot Yellow: badge dot, link hover */
+  /* Brand palette. */
+  --color-secondary: #1b5b85;      /* Antwarp Blue: report section, marquee */
+  --color-accent: #e3be1e;         /* Apricot Yellow: accents */
 
   /* Applied values from the homepage handoff. */
-  --color-surface: #ffffff;        /* section 2 background, inputs */
+  --color-paper: #faf8f5;          /* page background / warm base */
+  --color-surface: #ffffff;        /* panels, inputs */
   --color-ink: #1f2622;            /* text primary */
-  --color-muted: #6b746e;          /* body copy */
   --color-label: #47514b;          /* small labels, footer */
   --color-button: #0e2a3b;         /* button fill (hover -> secondary) */
-
-  /* Retained so the inner pages keep resolving. */
-  --color-shell: #faf8f5;
-  --color-paper: #faf8f5;           /* page background / warm base */
-  --color-mineral: #ffffff;
-  --color-sage: #faf8f5;
-  --color-mist: #ffffff;
-  --color-primary-deep: #7ba391;
-  --color-accent-deep: #a8880d;
-  --color-accent-light: #f5dc7a;
 
   --font-sans: var(--font-karla), system-ui, sans-serif;
   --font-display: var(--font-archivo), "Helvetica Neue", sans-serif;
   --font-serif: var(--font-instrument-serif), Georgia, serif;
 
-  --tracking-display: 0.05em;
-
   /* Duration is tied to how far one half travels. Each half repeats the
      brand list twice (~5200px), so the duration has to scale with it to hold
      a steady ~72px/s. Recompute if BRANDS or REPEAT changes. */
   --animate-marquee: marquee 73s linear infinite;
-  --animate-stack-enter: stack-enter 0.65s cubic-bezier(0.4, 0, 0.2, 1) both;
-  --animate-stack-enter-rev: stack-enter-rev 0.65s cubic-bezier(0.4, 0, 0.2, 1) both;
-  --animate-stack-exit: stack-exit 0.65s cubic-bezier(0.4, 0, 0.2, 1) both;
-  --animate-stack-exit-rev: stack-exit-rev 0.65s cubic-bezier(0.4, 0, 0.2, 1) both;
-  --animate-stack-snap: stack-snap 0.3s ease-out both;
-  --animate-step-text: step-text 0.45s cubic-bezier(0.22, 0.61, 0.36, 1) both;
-  --animate-story-rise: story-rise 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) both;
-  --animate-fade-up: fade-up 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) both;
 
   @keyframes marquee {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
   }
-  @keyframes stack-enter {
-    0% { transform: translateY(100%); }
-    100% { transform: translateY(0); }
-  }
-  @keyframes stack-enter-rev {
-    0% { transform: translateY(-100%); }
-    100% { transform: translateY(0); }
-  }
-  @keyframes stack-exit {
-    0% { transform: translateY(0); filter: brightness(1); }
-    100% { transform: translateY(-24%); filter: brightness(0.5); }
-  }
-  @keyframes stack-exit-rev {
-    0% { transform: translateY(0); filter: brightness(1); }
-    100% { transform: translateY(24%); filter: brightness(0.5); }
-  }
-  @keyframes stack-snap {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-  }
-  @keyframes step-text {
-    0% { opacity: 0; transform: translateY(14px); }
-    100% { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes story-rise {
-    0% { opacity: 0; transform: translateY(22px); }
-    100% { opacity: 1; transform: none; }
-  }
-  @keyframes fade-up {
-    0% { opacity: 0; transform: translateY(30px); }
-    100% { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes question-flip {
-    0% { opacity: 0; transform: translateY(14px); }
-    8% { opacity: 1; transform: translateY(0); }
-    30% { opacity: 1; transform: translateY(0); }
-    36% { opacity: 0; transform: translateY(-10px); }
-    100% { opacity: 0; transform: translateY(-10px); }
-  }
-}
-
-:root {
-  --video-overlay-top: rgba(0, 0, 0, 0.34);
-  --video-overlay-mid: rgba(0, 0, 0, 0.46);
-  --video-overlay-bottom: rgba(0, 0, 0, 0.6);
-  /* Height of the fixed nav, used to offset content under it on mobile. */
-  --site-chrome: 3.75rem;
-}
-
-/* Apricot treatment for the emphasised word in a headline. */
-.text-accent-gradient {
-  background: linear-gradient(135deg, #a8880d, #f5dc7a 50%, #e3be1e);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Three questions occupy one grid cell; staggered delays reveal one at a time. */
-.question-rotator {
-  display: grid;
-  gap: 1rem;
-}
-.question-rotator > * {
-  grid-area: 1 / 1;
-  animation: question-flip 9s linear infinite both;
-}
-.question-rotator > *:nth-child(2) { animation-delay: 3s; }
-.question-rotator > *:nth-child(3) { animation-delay: 6s; }
-
-@media (prefers-reduced-motion: reduce) {
-  .question-rotator > * {
-    animation: none;
-    opacity: 1;
-  }
-  .question-rotator > *:not(:first-child) { display: none; }
 }

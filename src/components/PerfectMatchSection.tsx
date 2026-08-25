@@ -69,7 +69,7 @@ export function PerfectMatchSection() {
 
       <div className="grid grid-cols-3 bg-surface">
         {PANELS.map((panel, i) => (
-          <div key={panel.src} className="flex min-w-0 flex-col">
+          <div key={panel.caption} className="flex min-w-0 flex-col">
             <div
               className="relative overflow-hidden"
               style={{ aspectRatio: PANEL_ASPECT }}
