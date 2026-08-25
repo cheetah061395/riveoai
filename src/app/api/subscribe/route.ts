@@ -57,8 +57,14 @@ export async function POST(request: Request) {
 
   if (!res.ok) {
     // A 400 here usually means the entry id is wrong or the form stopped
-    // accepting responses. Log the address so the signup is recoverable.
-    console.error(`Signup failed: Google Forms returned ${res.status}.`, email);
+    // accepting responses, both of which fail for every signup rather than a
+    // particular one, so the address adds nothing to the diagnosis. Log only
+    // the domain: enough to spot a pattern, without putting subscriber
+    // addresses into the platform logs, where they outlive the request and
+    // are visible to anyone with access to the project.
+    console.error(
+      `Signup failed: Google Forms returned ${res.status} for a @${email.split("@")[1]} address.`,
+    );
     return Response.json({ error: "upstream_rejected" }, { status: 502 });
   }
 
