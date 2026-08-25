@@ -52,14 +52,14 @@ const PANELS: {
 ];
 
 const CAPTION =
-  "shrink-0 px-6 pt-6 pb-7 text-center font-display text-[14px] font-normal uppercase leading-[1.5] tracking-[0.16em] text-ink";
+  "shrink-0 px-6 pt-6 pb-10 md:pb-7 text-center font-display text-[14px] font-normal uppercase leading-[1.5] tracking-[0.16em] text-ink";
 
 export function PerfectMatchSection() {
   return (
     <section
       id="how"
       data-screen-label="Perfect Match"
-      className="flex min-h-screen flex-col border-t border-ink/12 bg-surface"
+      className="flex flex-col border-t border-ink/12 bg-surface md:min-h-screen"
     >
       <div className="flex flex-[0_0_auto] flex-col items-center gap-5 px-10 pt-[7vh] pb-[4vh] text-center">
         <h2 className="m-0 font-display text-[clamp(18px,2vw,26px)] font-extralight uppercase leading-[1.5] tracking-[0.2em] text-ink">
@@ -67,7 +67,7 @@ export function PerfectMatchSection() {
         </h2>
       </div>
 
-      <div className="grid grid-cols-3 bg-surface">
+      <div className="grid grid-cols-1 bg-surface md:grid-cols-3">
         {PANELS.map((panel, i) => (
           <div key={panel.caption} className="flex min-w-0 flex-col">
             <div
