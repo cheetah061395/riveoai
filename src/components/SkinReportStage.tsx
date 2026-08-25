@@ -34,16 +34,27 @@ export function SkinReportStage() {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const measure = () =>
+    const measure = () => {
+      // A zero width means it is not laid out yet or is hidden. Scaling to 0
+      // would collapse the phone, so keep the last good value.
+      if (!el.clientWidth) return;
       setScale(Math.min(el.clientWidth / PHONE_WIDTH, MAX_SCALE));
+    };
     measure();
     const observer = new ResizeObserver(measure);
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
 
+  // min-w-0 below matters: as a grid item this defaults to min-width:auto, so
+  // the phone could stretch its own column, and the width we then measured was
+  // that stretched width. The scale never shrank, so the section overflowed
+  // sideways and cut off the heading beside it.
   return (
-    <div ref={ref} className="flex w-full justify-center md:justify-start">
+    <div
+      ref={ref}
+      className="flex w-full min-w-0 justify-center md:justify-start"
+    >
       {/* Sized to the scaled phone so ordinary flex alignment still works.
           Scaling from the top left inside it keeps the maths simple. */}
       <div
