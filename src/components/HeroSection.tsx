@@ -10,10 +10,12 @@ import { useState, type FormEvent } from "react";
  */
 const POST_URL = "/api/subscribe";
 
-type Status = "idle" | "submitting" | "success" | "error";
+type Status = "idle" | "submitting" | "success" | "error" | "rate-limited";
 
 export function HeroSection() {
   const [email, setEmail] = useState("");
+  // Honeypot. Hidden from people, so anything here came from a bot.
+  const [company, setCompany] = useState("");
   const [status, setStatus] = useState<Status>("idle");
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
@@ -23,9 +25,10 @@ export function HeroSection() {
       const res = await fetch(POST_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, company }),
       });
-      setStatus(res.ok ? "success" : "error");
+      if (res.ok) setStatus("success");
+      else setStatus(res.status === 429 ? "rate-limited" : "error");
     } catch {
       setStatus("error");
     }
@@ -54,6 +57,20 @@ export function HeroSection() {
           onSubmit={onSubmit}
           className="mx-auto mt-12 flex max-w-[360px] flex-col items-stretch gap-4"
         >
+          {/* Positioned offscreen rather than display:none, which many
+              bots skip. Hidden from assistive tech and unreachable by tab, so
+              nobody using the page can land on it. */}
+          <input
+            type="text"
+            name="company"
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            value={company}
+            onChange={(event) => setCompany(event.target.value)}
+            className="absolute left-[-9999px] h-0 w-0 opacity-0"
+          />
+
           <label htmlFor="hero-email" className="sr-only">
             Email
           </label>
@@ -73,9 +90,11 @@ export function HeroSection() {
           >
             {status === "submitting" ? "Sending…" : "Get Early Access"}
           </button>
-          {status === "error" ? (
+          {status === "error" || status === "rate-limited" ? (
             <p role="alert" className="font-sans text-[13px] text-label">
-              Something went wrong. Please try again.
+              {status === "rate-limited"
+                ? "Too many attempts. Please try again in a few minutes."
+                : "Something went wrong. Please try again."}
             </p>
           ) : null}
         </form>
