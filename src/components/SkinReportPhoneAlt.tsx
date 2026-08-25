@@ -45,7 +45,7 @@ const MATCHES = [
  *  explains why that undertone behaves the way it does and what to do about
  *  it at the counter. */
 const SUMMARY =
-  "Your undertone is neutral-olive with a slightly cool lean. Avoid peach and golden bases, because an olive undertone pulls them orange on the skin. Stay in muted neutral and olive families instead.";
+  "Your undertone is neutral-olive, slightly leaning cool. Avoid peach and golden bases, because an olive undertone pulls them orange on the skin. Stay in muted neutral and olive families instead.";
 
 const LABEL = "font-sans text-[11px] font-semibold uppercase tracking-[0.16em] text-secondary";
 
