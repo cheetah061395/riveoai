@@ -4,6 +4,7 @@ import "./globals.css";
 
 import AnnouncementBar from "@/components/AnnouncementBar";
 import SiteHeader from "@/components/SiteHeader";
+import { SITE_URL } from "@/lib/site";
 import { SiteFooter } from "@/components/SiteFooter";
 
 // Type stack per the homepage handoff: Archivo for display, Instrument Serif
@@ -31,6 +32,10 @@ const karla = Karla({
 });
 
 export const metadata: Metadata = {
+  // Gives Google a single canonical origin to consolidate on, so the
+  // www/apex and any preview URLs do not compete with riveoai.com.
+  metadataBase: new URL(SITE_URL),
+  alternates: { canonical: "/" },
   title: {
     default: "Riveo | Find your perfect foundation shade",
     template: "%s | Riveo",
