@@ -58,7 +58,7 @@ export function SkinReportPhoneAlt() {
           "0 40px 80px rgba(0,0,0,0.18), 0 12px 28px rgba(0,0,0,0.12)",
       }}
     >
-      <div className="flex h-full flex-col bg-[#E3D6C2]">
+      <div className="flex h-full flex-col bg-[#EFE6DA]">
         <div className="px-[18px] pt-7">
           <p className="font-serif text-[17px] uppercase tracking-[0.22em] text-ink">
             Riveo
@@ -68,8 +68,8 @@ export function SkinReportPhoneAlt() {
 
         <div className="flex-1 overflow-hidden px-[18px]">
           <div
-            className="mt-3 rounded-[3px] border border-ink/20 bg-white px-[18px] pt-[18px] pb-5"
-            style={{ boxShadow: "0 6px 20px rgba(31,38,34,0.07)" }}
+            className="mt-3 rounded-[3px] border border-ink/25 bg-white px-[18px] pt-[18px] pb-5"
+            style={{ boxShadow: "0 8px 24px rgba(31,38,34,0.13)" }}
           >
             <p className="font-display text-[17px] font-medium uppercase tracking-[0.1em] text-ink">
               Your Shade Matches

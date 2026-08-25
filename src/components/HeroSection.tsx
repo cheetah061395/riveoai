@@ -37,7 +37,7 @@ export function HeroSection() {
   return (
     <section
       data-screen-label="Hero"
-      className="bg-paper px-6 pt-16 pb-20 text-center md:px-10 md:pt-36 md:pb-36"
+      className="bg-paper px-6 pt-10 pb-16 text-center md:px-10 md:pt-36 md:pb-36"
     >
       <h1 className="m-0 font-display text-[42px] font-extralight uppercase leading-[1.45] tracking-[0.2em] text-ink max-md:text-[28px] max-md:tracking-[0.16em] max-sm:text-[22px]">
         Find your perfect foundation shade
