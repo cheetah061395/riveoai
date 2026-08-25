@@ -17,7 +17,7 @@ export function SkinReportSection() {
       aria-label="Your skin report"
       className="overflow-hidden bg-secondary"
     >
-      <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 pb-14 md:grid-cols-2 md:gap-16 md:px-10 md:pb-0">
+      <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 md:grid-cols-2 md:gap-16 md:px-10">
         <div className="pt-20 pb-4 md:py-28">
           <h2 className="font-display text-[clamp(18px,2vw,26px)] font-extralight uppercase leading-[1.6] tracking-[0.2em] text-paper">
             Understand your skin tone. Never guess your foundation shade
