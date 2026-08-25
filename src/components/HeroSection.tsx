@@ -46,9 +46,9 @@ export function HeroSection() {
         Find your perfect foundation shade
       </h1>
 
-      <p className="mx-auto mt-7 max-w-[46ch] font-sans text-[21px] leading-[1.6] text-muted [text-wrap:pretty] max-md:text-[18px]">
-        Scan your face at home with our lab grade device and we match you with
-        your foundation shade. It&rsquo;s that easy.
+      <p className="mx-auto mt-7 max-w-[46ch] font-sans text-[21px] leading-[1.6] text-[#3A443E] [text-wrap:pretty] max-md:text-[18px]">
+        Measure your skin tone at home with our lab-grade device. Get your
+        exact shade match. It&rsquo;s that easy.
       </p>
 
       {status === "success" ? (

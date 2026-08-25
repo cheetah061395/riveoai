@@ -1,4 +1,10 @@
 /**
+ * Compact copy of the skin report phone, used as the third panel of the image
+ * row. Identical to SkinReportPhone except that the prose summary is dropped:
+ * in a scroll-past tile the matches are the point, and the paragraph only
+ * pushed them down. SkinReportPhone keeps the summary for the standalone page
+ * and the blue section, where there is room to read it.
+ *
  * The Riveo skin report, rendered inside a phone frame.
  *
  * Built at a fixed 402×874 base, the same size as the design reference, so
@@ -31,15 +37,9 @@ const MATCHES = [
   },
 ];
 
-/** Short, but it should teach something. The headline names the shade; this
- *  explains why that undertone behaves the way it does and what to do about
- *  it at the counter. */
-const SUMMARY =
-  "Your undertone is neutral-olive with a slightly cool lean. Avoid peach and golden bases, because an olive undertone pulls them orange on the skin. Stay in muted neutral and olive families instead.";
-
 const LABEL = "font-sans text-[11px] font-semibold uppercase tracking-[0.16em] text-secondary";
 
-export function SkinReportPhone() {
+export function SkinReportPhoneCompact() {
   return (
     <div
       className="h-[874px] w-[402px] overflow-hidden rounded-[48px] bg-[#F2F2F7]"
@@ -99,10 +99,6 @@ export function SkinReportPhone() {
             Light to light-medium, muted neutral-olive.
           </h2>
 
-          <p className="mt-3 font-sans text-[13px] leading-[1.55] text-ink/75">
-            {SUMMARY}
-          </p>
-
         </div>
 
         <div className="px-[18px] pb-6">
@@ -122,4 +118,4 @@ export function SkinReportPhone() {
   );
 }
 
-export default SkinReportPhone;
+export default SkinReportPhoneCompact;

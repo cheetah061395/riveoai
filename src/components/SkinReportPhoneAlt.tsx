@@ -1,4 +1,8 @@
 /**
+ * Second copy of the skin report phone, kept separate so the two slots can
+ * diverge. This one renders in the blue SkinReportSection; SkinReportPhone
+ * renders as the third panel of the image row. They start identical.
+ *
  * The Riveo skin report, rendered inside a phone frame.
  *
  * Built at a fixed 402×874 base, the same size as the design reference, so
@@ -39,7 +43,7 @@ const SUMMARY =
 
 const LABEL = "font-sans text-[11px] font-semibold uppercase tracking-[0.16em] text-secondary";
 
-export function SkinReportPhone() {
+export function SkinReportPhoneAlt() {
   return (
     <div
       className="h-[874px] w-[402px] overflow-hidden rounded-[48px] bg-[#F2F2F7]"
@@ -53,12 +57,12 @@ export function SkinReportPhone() {
           <p className="font-serif text-[17px] uppercase tracking-[0.22em] text-ink">
             Riveo
           </p>
-          <div className="mt-3 h-px bg-ink/14" />
+          <div className="mt-2 h-px bg-ink/14" />
         </div>
 
         <div className="flex-1 overflow-hidden px-[18px]">
           <div
-            className="mt-5 rounded-[3px] border border-ink/20 bg-white px-[18px] pt-[18px] pb-5"
+            className="mt-3 rounded-[3px] border border-ink/20 bg-white px-[18px] pt-[18px] pb-5"
             style={{ boxShadow: "0 6px 20px rgba(31,38,34,0.07)" }}
           >
             <p className="font-display text-[17px] font-medium uppercase tracking-[0.1em] text-ink">
@@ -122,4 +126,4 @@ export function SkinReportPhone() {
   );
 }
 
-export default SkinReportPhone;
+export default SkinReportPhoneAlt;

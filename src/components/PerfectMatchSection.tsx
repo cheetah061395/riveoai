@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import { SkinReportPanel } from "@/components/SkinReportPanel";
+
 /**
  * Section 2, a centred heading over a three-panel image row, each captioned.
  *
@@ -23,7 +25,12 @@ import Image from "next/image";
 const PANEL_ASPECT = 0.85;
 const FOCUS = "50% 32%";
 
-const PANELS = [
+const PANELS: {
+  src?: string;
+  alt: string;
+  caption: string;
+  phone?: boolean;
+}[] = [
   {
     src: "/home/product-left.jpg",
     alt: "A woman holding the Riveo device to her cheek.",
@@ -35,9 +42,12 @@ const PANELS = [
     caption: "Get your perfect match",
   },
   {
-    src: "/home/shade-range.jpg",
-    alt: "A foundation bottle and dropper surrounded by swatches in many shades.",
-    caption: "Matched across 100+ brands",
+    // The report itself rather than a photo, rendered live so the type stays
+    // crisp. Scaled to fill the tile width and anchored top, so it crops just
+    // past the matches card.
+    phone: true,
+    alt: "",
+    caption: "Shades matches from the top brands",
   },
 ];
 
@@ -64,15 +74,19 @@ export function PerfectMatchSection() {
               className="relative overflow-hidden"
               style={{ aspectRatio: PANEL_ASPECT }}
             >
-              <Image
-                src={panel.src}
-                alt={panel.alt}
-                fill
-                sizes="(max-width: 900px) 100vw, 33vw"
-                className="object-cover"
-                style={{ objectPosition: FOCUS }}
-                priority={i < 2}
-              />
+              {panel.phone ? (
+                <SkinReportPanel />
+              ) : (
+                <Image
+                  src={panel.src as string}
+                  alt={panel.alt}
+                  fill
+                  sizes="(max-width: 900px) 100vw, 33vw"
+                  className="object-cover"
+                  style={{ objectPosition: FOCUS }}
+                  priority={i < 2}
+                />
+              )}
             </div>
             <p className={CAPTION}>{panel.caption}</p>
           </div>

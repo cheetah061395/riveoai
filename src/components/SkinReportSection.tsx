@@ -1,4 +1,4 @@
-import { SkinReportPhone } from "@/components/SkinReportPhone";
+import { SkinReportPhoneAlt } from "@/components/SkinReportPhoneAlt";
 
 /**
  * Homepage section three: the skin report, given its own room.
@@ -32,9 +32,9 @@ export function SkinReportSection() {
             scale the card bottom lands near 490px, and the container stops
             there. Scaled past 1 to bring the report copy up to a size that
             reads at a glance. */}
-        <div className="relative h-[480px] md:h-[520px]">
-          <div className="absolute -top-3 left-1/2 origin-top -translate-x-1/2 scale-[1.08] md:left-0 md:translate-x-0">
-            <SkinReportPhone />
+        <div className="relative h-[493px] md:h-[533px]">
+          <div className="absolute -top-4 left-1/2 origin-top -translate-x-1/2 scale-[1.08] md:left-0 md:translate-x-0">
+            <SkinReportPhoneAlt />
           </div>
         </div>
       </div>
