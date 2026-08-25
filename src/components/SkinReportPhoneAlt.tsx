@@ -1,7 +1,13 @@
 /**
  * Second copy of the skin report phone, kept separate so the two slots can
  * diverge. This one renders in the blue SkinReportSection; SkinReportPhone
- * renders as the third panel of the image row. They start identical.
+ * renders as the third panel of the image row.
+ *
+ * The screens differ on purpose: warm sand here, to lift off the blue, and a
+ * clay wash in the image row, where it sits beside two warm portraits. The
+ * sand is deeper than it first looks it should be, because the report's
+ * matches card is white: too pale a screen and the card stops reading as a
+ * card, which flattens everything on it.
  *
  * The Riveo skin report, rendered inside a phone frame.
  *
@@ -52,7 +58,7 @@ export function SkinReportPhoneAlt() {
           "0 40px 80px rgba(0,0,0,0.18), 0 12px 28px rgba(0,0,0,0.12)",
       }}
     >
-      <div className="flex h-full flex-col bg-paper">
+      <div className="flex h-full flex-col bg-[#E3D6C2]">
         <div className="px-[18px] pt-7">
           <p className="font-serif text-[17px] uppercase tracking-[0.22em] text-ink">
             Riveo
@@ -103,7 +109,7 @@ export function SkinReportPhoneAlt() {
             Light to light-medium, muted neutral-olive.
           </h2>
 
-          <p className="mt-3 font-sans text-[13px] leading-[1.55] text-ink/75">
+          <p className="mt-3 font-sans text-[13px] leading-[1.6] text-ink">
             {SUMMARY}
           </p>
 

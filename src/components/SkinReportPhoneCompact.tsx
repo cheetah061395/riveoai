@@ -48,7 +48,7 @@ export function SkinReportPhoneCompact() {
           "0 40px 80px rgba(0,0,0,0.18), 0 12px 28px rgba(0,0,0,0.12)",
       }}
     >
-      <div className="flex h-full flex-col bg-paper">
+      <div className="flex h-full flex-col bg-[#F0DED7]">
         <div className="px-[18px] pt-7">
           <p className="font-serif text-[17px] uppercase tracking-[0.22em] text-ink">
             Riveo
