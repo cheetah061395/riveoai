@@ -37,25 +37,25 @@ export function HeroSection() {
   return (
     <section
       data-screen-label="Hero"
-      className="bg-paper px-10 pt-36 pb-36 text-center"
+      className="bg-paper px-6 pt-16 pb-20 text-center md:px-10 md:pt-36 md:pb-36"
     >
       <h1 className="m-0 font-display text-[42px] font-extralight uppercase leading-[1.45] tracking-[0.2em] text-ink max-md:text-[28px] max-md:tracking-[0.16em] max-sm:text-[22px]">
         Find your perfect foundation shade
       </h1>
 
-      <p className="mx-auto mt-10 max-w-[44ch] font-sans text-[20px] font-light leading-[1.8] tracking-[0.01em] text-[#3A443E] [text-wrap:pretty] max-md:text-[17px]">
+      <p className="mx-auto mt-7 max-w-[44ch] md:mt-10 font-sans text-[20px] font-light leading-[1.8] tracking-[0.01em] text-[#3A443E] [text-wrap:pretty] max-md:text-[17px]">
         Measure your skin tone at home with our lab-grade device. Get your
         exact shade match. It&rsquo;s that easy.
       </p>
 
       {status === "success" ? (
-        <p className="mx-auto mt-12 max-w-[360px] font-display text-[13px] font-extralight uppercase tracking-[0.18em] text-ink">
+        <p className="mx-auto mt-9 max-w-[360px] font-display text-[13px] md:mt-12 font-extralight uppercase tracking-[0.18em] text-ink">
           Thanks, you&rsquo;re on the list.
         </p>
       ) : (
         <form
           onSubmit={onSubmit}
-          className="mx-auto mt-12 flex max-w-[360px] flex-col items-stretch gap-4"
+          className="mx-auto mt-9 flex max-w-[360px] flex-col items-stretch gap-4 md:mt-12"
         >
           {/* Positioned offscreen rather than display:none, which many
               bots skip. Hidden from assistive tech and unreachable by tab, so

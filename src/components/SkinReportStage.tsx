@@ -18,9 +18,13 @@ import { SkinReportPhoneAlt } from "@/components/SkinReportPhoneAlt";
  * that scale rather than fixed, which is what stops the copy being cut off.
  *
  * The phone is 402x874 but its content ends well before the bottom, so only
- * VISIBLE_HEIGHT of it is worth showing. CROP_TOP shaves the flat top of the
- * frame while leaving the corner curves, so it reads as carrying on past the
- * section's top edge.
+ * VISIBLE_HEIGHT of it is worth showing.
+ *
+ * CROP_TOP shaves the flat top of the frame so it reads as carrying on past
+ * the section's top edge. That only works on desktop, where the phone sits
+ * beside the heading and does run off the top. Stacked under the heading on a
+ * phone there is blue above it, so the same shave reads as a phone with its
+ * top cut off. Below md the frame is shown whole, curvature and all.
  */
 const PHONE_WIDTH = 402;
 const VISIBLE_HEIGHT = 510;
@@ -30,6 +34,15 @@ const MAX_SCALE = 1.08;
 export function SkinReportStage() {
   const ref = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(MAX_SCALE);
+  const [bleedsOffTop, setBleedsOffTop] = useState(false);
+
+  useEffect(() => {
+    const query = window.matchMedia("(min-width: 768px)");
+    const update = () => setBleedsOffTop(query.matches);
+    update();
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, []);
 
   useEffect(() => {
     const el = ref.current;
@@ -46,6 +59,8 @@ export function SkinReportStage() {
     return () => observer.disconnect();
   }, []);
 
+  const cropTop = bleedsOffTop ? CROP_TOP : 0;
+
   // min-w-0 below matters: as a grid item this defaults to min-width:auto, so
   // the phone could stretch its own column, and the width we then measured was
   // that stretched width. The scale never shrank, so the section overflowed
@@ -61,13 +76,13 @@ export function SkinReportStage() {
         className="relative overflow-hidden"
         style={{
           width: PHONE_WIDTH * scale,
-          height: (VISIBLE_HEIGHT - CROP_TOP) * scale,
+          height: (VISIBLE_HEIGHT - cropTop) * scale,
         }}
       >
         <div
           className="absolute left-0"
           style={{
-            top: -CROP_TOP * scale,
+            top: -cropTop * scale,
             transform: `scale(${scale})`,
             transformOrigin: "top left",
           }}
