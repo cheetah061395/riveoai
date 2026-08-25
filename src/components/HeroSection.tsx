@@ -45,7 +45,7 @@ export function HeroSection() {
 
       <p className="mx-auto mt-7 max-w-[44ch] md:mt-10 font-sans text-[20px] font-light leading-[1.8] tracking-[0.01em] text-[#3A443E] [text-wrap:pretty] max-md:text-[17px]">
         Measure your skin tone at home with our lab-grade device. Get your
-        exact shade match. It&rsquo;s that easy.
+        exact shade match across 100+ brands. It&rsquo;s that easy.
       </p>
 
       {status === "success" ? (
