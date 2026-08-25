@@ -5,12 +5,10 @@ import { useState, type FormEvent } from "react";
 /**
  * Section 1, centred title screen with email capture.
  *
- * `status` is wired for the full submit lifecycle, but there is no endpoint
- * yet: the handoff lists the newsletter/CRM destination as TBD. Until one
- * exists, submit resolves straight to "success" without sending anything.
- * Point POST_URL at the real list and remove the short-circuit.
+ * Submits to our own route handler, which forwards into the Google Form that
+ * holds the early-access list. See `src/app/api/subscribe/route.ts`.
  */
-const POST_URL: string | null = null;
+const POST_URL = "/api/subscribe";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -20,10 +18,6 @@ export function HeroSection() {
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (!POST_URL) {
-      setStatus("success");
-      return;
-    }
     setStatus("submitting");
     try {
       const res = await fetch(POST_URL, {

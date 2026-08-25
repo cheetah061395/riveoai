@@ -6,14 +6,16 @@
  * If a menu drawer, search or account flow is designed later, this is where
  * the left and right clusters go back.
  */
+import Link from "next/link";
+
 export default function SiteHeader() {
   return (
     <header className="flex items-center justify-center bg-paper px-10 py-[26px]">
-      <a href="/" aria-label="Riveo, home">
+      <Link href="/" aria-label="Riveo, home">
         <span className="font-serif text-[34px] uppercase tracking-[0.22em] text-ink">
           Riveo
         </span>
-      </a>
+      </Link>
     </header>
   );
 }

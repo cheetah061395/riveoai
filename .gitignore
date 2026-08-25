@@ -46,3 +46,9 @@ next-env.d.ts
 # personal files kept locally — anything here is served publicly by Next.js
 /public/images/*.pdf
 /public/images/IMG_*
+
+# Scratch worktrees created by tooling
+.claude/worktrees/
+
+# Committed as a template; the real values live in .env.local
+!.env.example
