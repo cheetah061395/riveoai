@@ -52,7 +52,7 @@ const PANELS: {
 ];
 
 const CAPTION =
-  "shrink-0 px-6 pt-4 pb-5 text-center font-sans text-[21px] font-semibold leading-[1.4] text-ink";
+  "shrink-0 px-6 pt-6 pb-7 text-center font-display text-[14px] font-normal uppercase leading-[1.5] tracking-[0.16em] text-ink";
 
 export function PerfectMatchSection() {
   return (
@@ -61,8 +61,8 @@ export function PerfectMatchSection() {
       data-screen-label="Perfect Match"
       className="flex min-h-screen flex-col border-t border-ink/12 bg-surface"
     >
-      <div className="flex flex-[0_0_auto] flex-col items-center gap-5 px-10 pt-[4.5vh] pb-[2.5vh] text-center">
-        <h2 className="m-0 font-display text-[clamp(28px,3.4vw,46px)] font-light leading-[1.2] tracking-[0.05em] text-ink">
+      <div className="flex flex-[0_0_auto] flex-col items-center gap-5 px-10 pt-[7vh] pb-[4vh] text-center">
+        <h2 className="m-0 font-display text-[clamp(18px,2vw,26px)] font-extralight uppercase leading-[1.5] tracking-[0.2em] text-ink">
           Find your shade match across 100+ brands
         </h2>
       </div>

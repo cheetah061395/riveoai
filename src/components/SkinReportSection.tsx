@@ -21,7 +21,7 @@ export function SkinReportSection() {
     >
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-10 md:grid-cols-2 md:gap-16">
         <div className="pt-20 pb-4 md:py-28">
-          <h2 className="font-display text-[clamp(26px,2.8vw,38px)] font-light leading-[1.2] tracking-[0.05em] text-paper">
+          <h2 className="font-display text-[clamp(18px,2vw,26px)] font-extralight uppercase leading-[1.6] tracking-[0.2em] text-paper">
             Understand your skin tone. Never guess your foundation shade
             again.
           </h2>

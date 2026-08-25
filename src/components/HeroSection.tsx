@@ -40,25 +40,25 @@ export function HeroSection() {
   return (
     <section
       data-screen-label="Hero"
-      className="bg-paper px-10 pt-24 pb-26 text-center"
+      className="bg-paper px-10 pt-36 pb-36 text-center"
     >
-      <h1 className="m-0 font-display text-[64px] font-light leading-[1.12] tracking-[0.06em] text-ink max-md:text-[40px] max-sm:text-[32px]">
+      <h1 className="m-0 font-display text-[42px] font-extralight uppercase leading-[1.45] tracking-[0.2em] text-ink max-md:text-[28px] max-md:tracking-[0.16em] max-sm:text-[22px]">
         Find your perfect foundation shade
       </h1>
 
-      <p className="mx-auto mt-7 max-w-[46ch] font-sans text-[21px] leading-[1.6] text-[#3A443E] [text-wrap:pretty] max-md:text-[18px]">
+      <p className="mx-auto mt-10 max-w-[44ch] font-sans text-[20px] font-light leading-[1.8] tracking-[0.01em] text-[#3A443E] [text-wrap:pretty] max-md:text-[17px]">
         Measure your skin tone at home with our lab-grade device. Get your
         exact shade match. It&rsquo;s that easy.
       </p>
 
       {status === "success" ? (
-        <p className="mx-auto mt-10 max-w-[360px] font-display text-[15px] font-light tracking-[0.04em] text-ink">
+        <p className="mx-auto mt-12 max-w-[360px] font-display text-[13px] font-extralight uppercase tracking-[0.18em] text-ink">
           Thanks, you&rsquo;re on the list.
         </p>
       ) : (
         <form
           onSubmit={onSubmit}
-          className="mx-auto mt-10 flex max-w-[360px] flex-col items-stretch gap-3.5"
+          className="mx-auto mt-12 flex max-w-[360px] flex-col items-stretch gap-4"
         >
           <label htmlFor="hero-email" className="sr-only">
             Email
@@ -70,12 +70,12 @@ export function HeroSection() {
             placeholder="Email"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
-            className="rounded-md border border-ink/22 bg-surface px-[18px] py-[15px] text-center font-display text-[15px] font-light tracking-[0.04em] text-ink outline-none focus:border-secondary"
+            className="rounded-md border border-ink/22 bg-surface px-[18px] py-[17px] text-center font-display text-[13px] font-light tracking-[0.1em] text-ink outline-none focus:border-secondary"
           />
           <button
             type="submit"
             disabled={status === "submitting"}
-            className="cursor-pointer rounded-md bg-button px-6 py-[17px] font-display text-sm font-normal uppercase tracking-[0.14em] text-paper transition-colors hover:bg-secondary disabled:opacity-60"
+            className="cursor-pointer rounded-md bg-button px-8 py-[19px] font-display text-[11px] font-normal uppercase tracking-[0.24em] text-paper transition-colors hover:bg-secondary disabled:opacity-60"
           >
             {status === "submitting" ? "Sending…" : "Get Early Access"}
           </button>

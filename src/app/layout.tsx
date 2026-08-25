@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     template: "%s | Riveo",
   },
   description:
-    "Scan your face at home with our lab grade device and we match you with your foundation shade.",
+    "Measure your skin tone at home with our lab-grade device and get your exact shade match across 100+ brands.",
   icons: {
     icon: [{ url: "/favicon.ico", sizes: "16x16", type: "image/x-icon" }],
   },
