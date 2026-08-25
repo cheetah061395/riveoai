@@ -19,10 +19,16 @@ import { SkinReportPanel } from "@/components/SkinReportPanel";
  * the join lands on the hairline. Evening out the scale needs the photos
  * re-exported with real margin around the subject.
  *
- * PANEL_ASPECT is the dial for tile height, larger is shorter.
+ * Tile aspect is the dial for height, larger is shorter. It is squarer on a
+ * phone, where the tiles are full width: at the desktop 0.85 a 390px screen
+ * gives a 459px tile, which is taller than the report in panel three has
+ * content to fill (its summary paragraph was cut), leaving dead space under
+ * it. Written as decimals rather than a ratio because Tailwind silently drops
+ * arbitrary values containing a slash.
+ *
  * FOCUS is the vertical crop window: 0% pins the top, 100% pins the bottom.
  */
-const PANEL_ASPECT = 0.85;
+const PANEL_ASPECT = "aspect-[1] md:aspect-[0.85]";
 const FOCUS = "50% 32%";
 
 const PANELS: {
@@ -70,10 +76,7 @@ export function PerfectMatchSection() {
       <div className="grid grid-cols-1 bg-surface md:grid-cols-3">
         {PANELS.map((panel, i) => (
           <div key={panel.caption} className="flex min-w-0 flex-col">
-            <div
-              className="relative overflow-hidden"
-              style={{ aspectRatio: PANEL_ASPECT }}
-            >
+            <div className={`relative overflow-hidden ${PANEL_ASPECT}`}>
               {panel.phone ? (
                 <SkinReportPanel />
               ) : (
