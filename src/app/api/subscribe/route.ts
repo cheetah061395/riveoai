@@ -69,9 +69,23 @@ function rateLimited(ip: string): boolean {
 }
 
 function clientIp(request: Request): string {
-  // Vercel sets both; x-forwarded-for may be a chain, and the client is first.
+  // `x-vercel-forwarded-for` is set by the platform and stripped from anything
+  // the client sends, so it is the only trustworthy source here.
+  //
+  // `x-forwarded-for` is NOT safe to read from the front. A client can send its
+  // own, and the proxy appends rather than replaces, so the first entry is
+  // attacker controlled: rotating it defeats the rate limit completely. This
+  // was verified against production before the header was changed. Falling
+  // back, the LAST entry is the one written by the closest trusted hop.
+  const vercel = request.headers.get("x-vercel-forwarded-for");
+  if (vercel) return vercel.split(",")[0].trim();
+
   const forwarded = request.headers.get("x-forwarded-for");
-  if (forwarded) return forwarded.split(",")[0].trim();
+  if (forwarded) {
+    const chain = forwarded.split(",");
+    return chain[chain.length - 1].trim();
+  }
+
   return request.headers.get("x-real-ip") ?? "unknown";
 }
 
